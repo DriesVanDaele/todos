@@ -1,0 +1,1448 @@
+@relation tag_recommendation
+
+@attribute 0900 {0,1}
+@attribute 1 {0,1}
+@attribute 10 {0,1}
+@attribute 100d {0,1}
+@attribute 105 {0,1}
+@attribute 10h {0,1}
+@attribute 12 {0,1}
+@attribute 14 {0,1}
+@attribute 14th {0,1}
+@attribute 14u {0,1}
+@attribute 16h {0,1}
+@attribute 19 {0,1}
+@attribute 20 {0,1}
+@attribute 2000 {0,1}
+@attribute 20102011 {0,1}
+@attribute 2012 {0,1}
+@attribute 21h {0,1}
+@attribute 26 {0,1}
+@attribute 4 {0,1}
+@attribute 4pm {0,1}
+@attribute 5 {0,1}
+@attribute 5pm {0,1}
+@attribute 6pm {0,1}
+@attribute 7 {0,1}
+@attribute 7pm {0,1}
+@attribute 9 {0,1}
+@attribute a {0,1}
+@attribute a4 {0,1}
+@attribute ab {0,1}
+@attribute about {0,1}
+@attribute abroad {0,1}
+@attribute account {0,1}
+@attribute activ {0,1}
+@attribute actual {0,1}
+@attribute add {0,1}
+@attribute advanc {0,1}
+@attribute advisor {0,1}
+@attribute after {0,1}
+@attribute agenc {0,1}
+@attribute agent {0,1}
+@attribute ai {0,1}
+@attribute airplan {0,1}
+@attribute airport {0,1}
+@attribute algebra {0,1}
+@attribute algorithm {0,1}
+@attribute all {0,1}
+@attribute allei {0,1}
+@attribute allow {0,1}
+@attribute alma {0,1}
+@attribute alogrithm {0,1}
+@attribute am {0,1}
+@attribute amsterdam {0,1}
+@attribute an {0,1}
+@attribute and {0,1}
+@attribute anniversari {0,1}
+@attribute anoth {0,1}
+@attribute antwerp {0,1}
+@attribute apple {0,1}
+@attribute applic {0,1}
+@attribute applicat {0,1}
+@attribute apply {0,1}
+@attribute appoint {0,1}
+@attribute appointment {0,1}
+@attribute aquabeat {0,1}
+@attribute ardenn {0,1}
+@attribute arm {0,1}
+@attribute around {0,1}
+@attribute arrang {0,1}
+@attribute arthur {0,1}
+@attribute articl {0,1}
+@attribute artifici {0,1}
+@attribute ask {0,1}
+@attribute aspe {0,1}
+@attribute assign {0,1}
+@attribute assist {0,1}
+@attribute associ {0,1}
+@attribute at {0,1}
+@attribute athensprogramm {0,1}
+@attribute bach {0,1}
+@attribute back {0,1}
+@attribute backend {0,1}
+@attribute backyard {0,1}
+@attribute bag {0,1}
+@attribute bakeri {0,1}
+@attribute bang {0,1}
+@attribute bank {0,1}
+@attribute bankaccount {0,1}
+@attribute barbecu {0,1}
+@attribute barber {0,1}
+@attribute barcelona {0,1}
+@attribute bargain {0,1}
+@attribute bart {0,1}
+@attribute basketbal {0,1}
+@attribute batteri {0,1}
+@attribute be {0,1}
+@attribute bear {0,1}
+@attribute bed {0,1}
+@attribute bedroom {0,1}
+@attribute beer {0,1}
+@attribute befor {0,1}
+@attribute ben {0,1}
+@attribute benjamin {0,1}
+@attribute berlin {0,1}
+@attribute berlusconi {0,1}
+@attribute big {0,1}
+@attribute bigger {0,1}
+@attribute bike {0,1}
+@attribute bill {0,1}
+@attribute birthdai {0,1}
+@attribute block {0,1}
+@attribute blog {0,1}
+@attribute bloodcheck {0,1}
+@attribute board {0,1}
+@attribute boat {0,1}
+@attribute book {0,1}
+@attribute bookcas {0,1}
+@attribute borrow {0,1}
+@attribute boss {0,1}
+@attribute bowl {0,1}
+@attribute brake {0,1}
+@attribute bram {0,1}
+@attribute bread {0,1}
+@attribute breakfast {0,1}
+@attribute bring {0,1}
+@attribute brother {0,1}
+@attribute brussel {0,1}
+@attribute bug {0,1}
+@attribute bui {0,1}
+@attribute build {0,1}
+@attribute busi {0,1}
+@attribute by {0,1}
+@attribute c {0,1}
+@attribute cake {0,1}
+@attribute calcul {0,1}
+@attribute call {0,1}
+@attribute camera {0,1}
+@attribute camp {0,1}
+@attribute cancel {0,1}
+@attribute cant {0,1}
+@attribute car {0,1}
+@attribute card {0,1}
+@attribute cash {0,1}
+@attribute celebr {0,1}
+@attribute cellphon {0,1}
+@attribute center {0,1}
+@attribute cento {0,1}
+@attribute challeng {0,1}
+@attribute chang {0,1}
+@attribute chapter {0,1}
+@attribute check {0,1}
+@attribute checkup {0,1}
+@attribute chemistri {0,1}
+@attribute chicken {0,1}
+@attribute children {0,1}
+@attribute chines {0,1}
+@attribute choos {0,1}
+@attribute christma {0,1}
+@attribute cinema {0,1}
+@attribute citi {0,1}
+@attribute citytrip {0,1}
+@attribute citytryp {0,1}
+@attribute claei {0,1}
+@attribute class_ {0,1}
+@attribute class_ier {0,1}
+@attribute clean {0,1}
+@attribute climb {0,1}
+@attribute close {0,1}
+@attribute cloth {0,1}
+@attribute cluster {0,1}
+@attribute codak {0,1}
+@attribute code {0,1}
+@attribute collect {0,1}
+@attribute collegu {0,1}
+@attribute comic {0,1}
+@attribute compani {0,1}
+@attribute compar {0,1}
+@attribute complaint {0,1}
+@attribute complet {0,1}
+@attribute complex {0,1}
+@attribute comput {0,1}
+@attribute computerlesson {0,1}
+@attribute computerscreen {0,1}
+@attribute concert {0,1}
+@attribute confirm {0,1}
+@attribute connect {0,1}
+@attribute consult {0,1}
+@attribute contact {0,1}
+@attribute contest {0,1}
+@attribute control {0,1}
+@attribute convert {0,1}
+@attribute cook {0,1}
+@attribute cost {0,1}
+@attribute costum {0,1}
+@attribute countri {0,1}
+@attribute coupl {0,1}
+@attribute cours {0,1}
+@attribute cousin {0,1}
+@attribute cpl {0,1}
+@attribute creat {0,1}
+@attribute credit {0,1}
+@attribute crowd {0,1}
+@attribute crt {0,1}
+@attribute current {0,1}
+@attribute cut {0,1}
+@attribute cv {0,1}
+@attribute cvbook {0,1}
+@attribute cw {0,1}
+@attribute cycl {0,1}
+@attribute dad {0,1}
+@attribute dai {0,1}
+@attribute daili {0,1}
+@attribute data {0,1}
+@attribute databas {0,1}
+@attribute dataset {0,1}
+@attribute date {0,1}
+@attribute david {0,1}
+@attribute deadlin {0,1}
+@attribute debit {0,1}
+@attribute debt {0,1}
+@attribute decathlon {0,1}
+@attribute decemb {0,1}
+@attribute delhaiz {0,1}
+@attribute deliveri {0,1}
+@attribute dentist {0,1}
+@attribute depart {0,1}
+@attribute deposit {0,1}
+@attribute destin {0,1}
+@attribute destroi {0,1}
+@attribute develop {0,1}
+@attribute dexia {0,1}
+@attribute diabet {0,1}
+@attribute diagram {0,1}
+@attribute differ {0,1}
+@attribute dinner {0,1}
+@attribute dinosaur {0,1}
+@attribute direct {0,1}
+@attribute disambigu {0,1}
+@attribute discuss {0,1}
+@attribute dish {0,1}
+@attribute disk {0,1}
+@attribute distribut {0,1}
+@attribute dive {0,1}
+@attribute do {0,1}
+@attribute doctor {0,1}
+@attribute document {0,1}
+@attribute dog {0,1}
+@attribute dollar {0,1}
+@attribute dont {0,1}
+@attribute dormitori {0,1}
+@attribute download {0,1}
+@attribute drachm {0,1}
+@attribute draw {0,1}
+@attribute dresden {0,1}
+@attribute drink {0,1}
+@attribute drive {0,1}
+@attribute driven {0,1}
+@attribute driver {0,1}
+@attribute dubai {0,1}
+@attribute due {0,1}
+@attribute dvd {0,1}
+@attribute dvdbox {0,1}
+@attribute dy {0,1}
+@attribute earn {0,1}
+@attribute eat {0,1}
+@attribute ebai {0,1}
+@attribute educ {0,1}
+@attribute eiffel {0,1}
+@attribute electr {0,1}
+@attribute email {0,1}
+@attribute employe {0,1}
+@attribute end {0,1}
+@attribute english {0,1}
+@attribute enjoi {0,1}
+@attribute enroll {0,1}
+@attribute eo {0,1}
+@attribute episod {0,1}
+@attribute equip {0,1}
+@attribute erasmu {0,1}
+@attribute escher {0,1}
+@attribute euro {0,1}
+@attribute eurostar {0,1}
+@attribute ev {0,1}
+@attribute evalu {0,1}
+@attribute evaluat {0,1}
+@attribute even {0,1}
+@attribute event {0,1}
+@attribute everyon {0,1}
+@attribute exam {0,1}
+@attribute examin {0,1}
+@attribute excercis {0,1}
+@attribute exchang {0,1}
+@attribute exercis {0,1}
+@attribute exper {0,1}
+@attribute extra {0,1}
+@attribute facebook {0,1}
+@attribute famili {0,1}
+@attribute farewel {0,1}
+@attribute father {0,1}
+@attribute faust {0,1}
+@attribute fee {0,1}
+@attribute feedback {0,1}
+@attribute figur {0,1}
+@attribute fill {0,1}
+@attribute final {0,1}
+@attribute financ {0,1}
+@attribute financi {0,1}
+@attribute find {0,1}
+@attribute finish {0,1}
+@attribute fire {0,1}
+@attribute firmwar {0,1}
+@attribute first {0,1}
+@attribute fish {0,1}
+@attribute fit {0,1}
+@attribute fix {0,1}
+@attribute flight {0,1}
+@attribute floor {0,1}
+@attribute followup {0,1}
+@attribute food {0,1}
+@attribute footbal {0,1}
+@attribute footballnight {0,1}
+@attribute for {0,1}
+@attribute formal {0,1}
+@attribute forum {0,1}
+@attribute frank {0,1}
+@attribute fridai {0,1}
+@attribute friend {0,1}
+@attribute from {0,1}
+@attribute galaxi {0,1}
+@attribute game {0,1}
+@attribute garag {0,1}
+@attribute garbag {0,1}
+@attribute garden {0,1}
+@attribute genet {0,1}
+@attribute gent {0,1}
+@attribute geographi {0,1}
+@attribute germani {0,1}
+@attribute gert {0,1}
+@attribute get {0,1}
+@attribute gift {0,1}
+@attribute girl {0,1}
+@attribute girlfriend {0,1}
+@attribute give {0,1}
+@attribute go {0,1}
+@attribute godel {0,1}
+@attribute goeth {0,1}
+@attribute good {0,1}
+@attribute googl {0,1}
+@attribute got {0,1}
+@attribute govern {0,1}
+@attribute grandfath {0,1}
+@attribute grandma {0,1}
+@attribute grandmoth {0,1}
+@attribute grandpa {0,1}
+@attribute grandpar {0,1}
+@attribute graphic {0,1}
+@attribute grass {0,1}
+@attribute grave {0,1}
+@attribute groceri {0,1}
+@attribute group {0,1}
+@attribute guarante {0,1}
+@attribute guid {0,1}
+@attribute guitar {0,1}
+@attribute gym {0,1}
+@attribute gymnast {0,1}
+@attribute ha {0,1}
+@attribute hair {0,1}
+@attribute hairdress {0,1}
+@attribute hall {0,1}
+@attribute halloween {0,1}
+@attribute halogen {0,1}
+@attribute hand {0,1}
+@attribute hard {0,1}
+@attribute harri {0,1}
+@attribute have {0,1}
+@attribute hawk {0,1}
+@attribute he {0,1}
+@attribute headlight {0,1}
+@attribute help {0,1}
+@attribute hi {0,1}
+@attribute him {0,1}
+@attribute hitchhik {0,1}
+@attribute hobbit {0,1}
+@attribute holidai {0,1}
+@attribute home {0,1}
+@attribute homewarm {0,1}
+@attribute homework {0,1}
+@attribute hospit {0,1}
+@attribute hotel {0,1}
+@attribute houben {0,1}
+@attribute housewarm {0,1}
+@attribute how {0,1}
+@attribute hunt {0,1}
+@attribute i {0,1}
+@attribute idea {0,1}
+@attribute ieeextreme {0,1}
+@attribute immedi {0,1}
+@attribute implement {0,1}
+@attribute in {0,1}
+@attribute includ {0,1}
+@attribute inductiv {0,1}
+@attribute ine {0,1}
+@attribute inferenc {0,1}
+@attribute info {0,1}
+@attribute inform {0,1}
+@attribute ingredi {0,1}
+@attribute intellig {0,1}
+@attribute intermedi {0,1}
+@attribute intern {0,1}
+@attribute internet {0,1}
+@attribute internship {0,1}
+@attribute interview {0,1}
+@attribute inteview {0,1}
+@attribute invest {0,1}
+@attribute invite {0,1}
+@attribute invoic {0,1}
+@attribute iron {0,1}
+@attribute isp {0,1}
+@attribute it {0,1}
+@attribute itali {0,1}
+@attribute javascript {0,1}
+@attribute jeanphilipp {0,1}
+@attribute jee2 {0,1}
+@attribute jeroen {0,1}
+@attribute jo {0,1}
+@attribute job {0,1}
+@attribute jog {0,1}
+@attribute jona {0,1}
+@attribute jonathan {0,1}
+@attribute journei {0,1}
+@attribute jump {0,1}
+@attribute jupil {0,1}
+@attribute just {0,1}
+@attribute karel {0,1}
+@attribute kati {0,1}
+@attribute keep {0,1}
+@attribute kennel {0,1}
+@attribute kernel {0,1}
+@attribute kid {0,1}
+@attribute kind {0,1}
+@attribute kitchen {0,1}
+@attribute kortrijk {0,1}
+@attribute kot {0,1}
+@attribute kubb {0,1}
+@attribute laboratori {0,1}
+@attribute lan {0,1}
+@attribute languag {0,1}
+@attribute languagesproject {0,1}
+@attribute laptop {0,1}
+@attribute lara {0,1}
+@attribute larsson {0,1}
+@attribute last {0,1}
+@attribute latest {0,1}
+@attribute laundri {0,1}
+@attribute lawn {0,1}
+@attribute leader {0,1}
+@attribute leagu {0,1}
+@attribute learn {0,1}
+@attribute leav {0,1}
+@attribute lectur {0,1}
+@attribute leerdamm {0,1}
+@attribute lesson {0,1}
+@attribute letter {0,1}
+@attribute leuven {0,1}
+@attribute librari {0,1}
+@attribute licenc {0,1}
+@attribute light {0,1}
+@attribute lineair {0,1}
+@attribute linear {0,1}
+@attribute list {0,1}
+@attribute literatur {0,1}
+@attribute littl {0,1}
+@attribute live {0,1}
+@attribute loan {0,1}
+@attribute local {0,1}
+@attribute locat {0,1}
+@attribute london {0,1}
+@attribute longdist {0,1}
+@attribute look {0,1}
+@attribute lord {0,1}
+@attribute louvr {0,1}
+@attribute luminu {0,1}
+@attribute lunch {0,1}
+@attribute maastricht {0,1}
+@attribute machin {0,1}
+@attribute mafia {0,1}
+@attribute mail {0,1}
+@attribute maintain {0,1}
+@attribute make {0,1}
+@attribute manual {0,1}
+@attribute mark {0,1}
+@attribute market {0,1}
+@attribute martin {0,1}
+@attribute match {0,1}
+@attribute materi {0,1}
+@attribute math {0,1}
+@attribute mathemat {0,1}
+@attribute matthia {0,1}
+@attribute mattress {0,1}
+@attribute me {0,1}
+@attribute meal {0,1}
+@attribute meet {0,1}
+@attribute merkel {0,1}
+@attribute mess {0,1}
+@attribute messag {0,1}
+@attribute met {0,1}
+@attribute michael {0,1}
+@attribute mile {0,1}
+@attribute ml {0,1}
+@attribute mlaii {0,1}
+@attribute mlii {0,1}
+@attribute mlproject {0,1}
+@attribute mogwai {0,1}
+@attribute mom {0,1}
+@attribute mondai {0,1}
+@attribute monei {0,1}
+@attribute mont {0,1}
+@attribute monthli {0,1}
+@attribute more {0,1}
+@attribute morn {0,1}
+@attribute mother {0,1}
+@attribute mous {0,1}
+@attribute move {0,1}
+@attribute movi {0,1}
+@attribute mow {0,1}
+@attribute mum {0,1}
+@attribute museum {0,1}
+@attribute my {0,1}
+@attribute naci {0,1}
+@attribute nas {0,1}
+@attribute natur {0,1}
+@attribute neighbor {0,1}
+@attribute neighbour {0,1}
+@attribute netherland {0,1}
+@attribute network {0,1}
+@attribute neural {0,1}
+@attribute new {0,1}
+@attribute newest {0,1}
+@attribute newspap {0,1}
+@attribute next {0,1}
+@attribute nice {0,1}
+@attribute niel {0,1}
+@attribute night {0,1}
+@attribute note {0,1}
+@attribute nov {0,1}
+@attribute novel {0,1}
+@attribute novemb {0,1}
+@attribute of {0,1}
+@attribute offer {0,1}
+@attribute offic {0,1}
+@attribute oil {0,1}
+@attribute old {0,1}
+@attribute on {0,1}
+@attribute ontologi {0,1}
+@attribute open {0,1}
+@attribute oper {0,1}
+@attribute oral {0,1}
+@attribute order {0,1}
+@attribute organis {0,1}
+@attribute organiz {0,1}
+@attribute oss {0,1}
+@attribute out {0,1}
+@attribute ow {0,1}
+@attribute pack {0,1}
+@attribute packag {0,1}
+@attribute page {0,1}
+@attribute pai {0,1}
+@attribute paint {0,1}
+@attribute pair {0,1}
+@attribute panama {0,1}
+@attribute paper {0,1}
+@attribute parent {0,1}
+@attribute pari {0,1}
+@attribute park {0,1}
+@attribute parnter {0,1}
+@attribute part {0,1}
+@attribute parti {0,1}
+@attribute particip {0,1}
+@attribute passport {0,1}
+@attribute payment {0,1}
+@attribute paypal {0,1}
+@attribute pdf {0,1}
+@attribute pencil {0,1}
+@attribute peno {0,1}
+@attribute person {0,1}
+@attribute pet {0,1}
+@attribute philipp {0,1}
+@attribute photo {0,1}
+@attribute physiotherapist {0,1}
+@attribute piano {0,1}
+@attribute pick {0,1}
+@attribute picknick {0,1}
+@attribute pickup {0,1}
+@attribute picnic {0,1}
+@attribute piec {0,1}
+@attribute pieter {0,1}
+@attribute pizza {0,1}
+@attribute plai {0,1}
+@attribute plan {0,1}
+@attribute player {0,1}
+@attribute playstat {0,1}
+@attribute pm {0,1}
+@attribute poker {0,1}
+@attribute polo {0,1}
+@attribute pool {0,1}
+@attribute post {0,1}
+@attribute postit {0,1}
+@attribute potter {0,1}
+@attribute practic {0,1}
+@attribute predict {0,1}
+@attribute prepar {0,1}
+@attribute present {0,1}
+@attribute print {0,1}
+@attribute pro {0,1}
+@attribute problem {0,1}
+@attribute process {0,1}
+@attribute product {0,1}
+@attribute prof {0,1}
+@attribute professor {0,1}
+@attribute program {0,1}
+@attribute progress {0,1}
+@attribute project {0,1}
+@attribute prolog {0,1}
+@attribute promotor {0,1}
+@attribute proteg {0,1}
+@attribute provid {0,1}
+@attribute pub {0,1}
+@attribute put {0,1}
+@attribute qualiti {0,1}
+@attribute quartal {0,1}
+@attribute queue {0,1}
+@attribute race {0,1}
+@attribute racket {0,1}
+@attribute rais {0,1}
+@attribute rake {0,1}
+@attribute rate {0,1}
+@attribute rd {0,1}
+@attribute read {0,1}
+@attribute receiv {0,1}
+@attribute recharg {0,1}
+@attribute recip {0,1}
+@attribute refund {0,1}
+@attribute regist {0,1}
+@attribute registr {0,1}
+@attribute relat {0,1}
+@attribute remind {0,1}
+@attribute remov {0,1}
+@attribute rent {0,1}
+@attribute reorgan {0,1}
+@attribute repair {0,1}
+@attribute repay {0,1}
+@attribute replac {0,1}
+@attribute repli {0,1}
+@attribute report {0,1}
+@attribute request {0,1}
+@attribute requir {0,1}
+@attribute research {0,1}
+@attribute reserv {0,1}
+@attribute resign {0,1}
+@attribute rest {0,1}
+@attribute restaur {0,1}
+@attribute retriev {0,1}
+@attribute return {0,1}
+@attribute reunion {0,1}
+@attribute review {0,1}
+@attribute ride {0,1}
+@attribute ring {0,1}
+@attribute roadbook {0,1}
+@attribute robot {0,1}
+@attribute room {0,1}
+@attribute rule {0,1}
+@attribute run {0,1}
+@attribute russian {0,1}
+@attribute sammi {0,1}
+@attribute samson {0,1}
+@attribute sarah {0,1}
+@attribute saturdai {0,1}
+@attribute save {0,1}
+@attribute schedul {0,1}
+@attribute scholarship {0,1}
+@attribute school {0,1}
+@attribute schoolproject {0,1}
+@attribute schooltrip {0,1}
+@attribute scorpion {0,1}
+@attribute search {0,1}
+@attribute see {0,1}
+@attribute sell {0,1}
+@attribute send {0,1}
+@attribute sens {0,1}
+@attribute sequenc {0,1}
+@attribute server {0,1}
+@attribute servic {0,1}
+@attribute session {0,1}
+@attribute set {0,1}
+@attribute share {0,1}
+@attribute shelf {0,1}
+@attribute ship {0,1}
+@attribute shoe {0,1}
+@attribute shop {0,1}
+@attribute sigarett {0,1}
+@attribute sister {0,1}
+@attribute ski {0,1}
+@attribute skill {0,1}
+@attribute slice {0,1}
+@attribute slide {0,1}
+@attribute smartphon {0,1}
+@attribute smith {0,1}
+@attribute sms {0,1}
+@attribute snowboard {0,1}
+@attribute snowboardvac {0,1}
+@attribute sock {0,1}
+@attribute softwar {0,1}
+@attribute softwaredesign {0,1}
+@attribute some {0,1}
+@attribute sourc {0,1}
+@attribute specif {0,1}
+@attribute spong {0,1}
+@attribute sportu {0,1}
+@attribute spotlight {0,1}
+@attribute sproutcor {0,1}
+@attribute ss {0,1}
+@attribute start {0,1}
+@attribute stefan {0,1}
+@attribute stephen {0,1}
+@attribute steve {0,1}
+@attribute stieg {0,1}
+@attribute stock {0,1}
+@attribute student {0,1}
+@attribute studi {0,1}
+@attribute studio {0,1}
+@attribute subscript {0,1}
+@attribute sugar {0,1}
+@attribute suit {0,1}
+@attribute suitcas {0,1}
+@attribute summer {0,1}
+@attribute sundai {0,1}
+@attribute supervisor {0,1}
+@attribute support {0,1}
+@attribute supris {0,1}
+@attribute survei {0,1}
+@attribute sven {0,1}
+@attribute svm {0,1}
+@attribute sweater {0,1}
+@attribute swim {0,1}
+@attribute swiss {0,1}
+@attribute switzerland {0,1}
+@attribute system {0,1}
+@attribute tag {0,1}
+@attribute take {0,1}
+@attribute talk {0,1}
+@attribute task {0,1}
+@attribute teacher {0,1}
+@attribute team {0,1}
+@attribute telenet {0,1}
+@attribute televis {0,1}
+@attribute tell {0,1}
+@attribute ten {0,1}
+@attribute tenni {0,1}
+@attribute tenth {0,1}
+@attribute test {0,1}
+@attribute text {0,1}
+@attribute textbook {0,1}
+@attribute that {0,1}
+@attribute the {0,1}
+@attribute theater {0,1}
+@attribute their {0,1}
+@attribute theori {0,1}
+@attribute thesi {0,1}
+@attribute thi {0,1}
+@attribute through {0,1}
+@attribute throw {0,1}
+@attribute thursdai {0,1}
+@attribute ticket {0,1}
+@attribute time {0,1}
+@attribute tintin {0,1}
+@attribute tire {0,1}
+@attribute to {0,1}
+@attribute todai {0,1}
+@attribute todo {0,1}
+@attribute toi {0,1}
+@attribute toledo {0,1}
+@attribute tom {0,1}
+@attribute tomorrow {0,1}
+@attribute tonight {0,1}
+@attribute tool {0,1}
+@attribute toothbrush {0,1}
+@attribute touch {0,1}
+@attribute tour {0,1}
+@attribute tournament {0,1}
+@attribute tower {0,1}
+@attribute town {0,1}
+@attribute train {0,1}
+@attribute transact {0,1}
+@attribute transfer {0,1}
+@attribute transport {0,1}
+@attribute travel {0,1}
+@attribute trawantel {0,1}
+@attribute trip {0,1}
+@attribute trouser {0,1}
+@attribute tuesdai {0,1}
+@attribute tuition {0,1}
+@attribute turkei {0,1}
+@attribute tutor {0,1}
+@attribute tv {0,1}
+@attribute twice {0,1}
+@attribute u {0,1}
+@attribute uml {0,1}
+@attribute uncl {0,1}
+@attribute uni {0,1}
+@attribute univers {0,1}
+@attribute up {0,1}
+@attribute upcom {0,1}
+@attribute updat {0,1}
+@attribute update {0,1}
+@attribute upgrade {0,1}
+@attribute upload {0,1}
+@attribute v20 {0,1}
+@attribute vacat {0,1}
+@attribute vaccin {0,1}
+@attribute vacin {0,1}
+@attribute vacuum {0,1}
+@attribute valentin {0,1}
+@attribute vector {0,1}
+@attribute ventoux {0,1}
+@attribute version {0,1}
+@attribute vidath {0,1}
+@attribute view {0,1}
+@attribute vike {0,1}
+@attribute visit {0,1}
+@attribute visualis {0,1}
+@attribute vodka {0,1}
+@attribute vp {0,1}
+@attribute vtk {0,1}
+@attribute vtm {0,1}
+@attribute wai {0,1}
+@attribute walibi {0,1}
+@attribute walk {0,1}
+@attribute wallet {0,1}
+@attribute wallpap {0,1}
+@attribute wash {0,1}
+@attribute watch {0,1}
+@attribute water {0,1}
+@attribute weather {0,1}
+@attribute webhost {0,1}
+@attribute websit {0,1}
+@attribute wed {0,1}
+@attribute wednesdai {0,1}
+@attribute weed {0,1}
+@attribute week {0,1}
+@attribute weekend {0,1}
+@attribute wheel {0,1}
+@attribute when {0,1}
+@attribute which {0,1}
+@attribute who {0,1}
+@attribute wife {0,1}
+@attribute willem {0,1}
+@attribute winter {0,1}
+@attribute wireless {0,1}
+@attribute wish {0,1}
+@attribute with {0,1}
+@attribute withdraw {0,1}
+@attribute word {0,1}
+@attribute wordpress {0,1}
+@attribute work {0,1}
+@attribute workbook {0,1}
+@attribute world {0,1}
+@attribute wouter {0,1}
+@attribute write {0,1}
+@attribute yana {0,1}
+@attribute year {0,1}
+@attribute yearli {0,1}
+@attribute yesterdai {0,1}
+@attribute yoghurt {0,1}
+@attribute york {0,1}
+@attribute young {0,1}
+@attribute your {0,1}
+@attribute youth {0,1}
+@attribute TAGappointment {0,1}
+@attribute TAGchore {0,1}
+@attribute TAGfamily {0,1}
+@attribute TAGfinance {0,1}
+@attribute TAGfriends {0,1}
+@attribute TAGhome {0,1}
+@attribute TAGleisure {0,1}
+@attribute TAGmlcourse {0,1}
+@attribute TAGreading {0,1}
+@attribute TAGschool {0,1}
+@attribute TAGshop {0,1}
+@attribute TAGsport {0,1}
+@attribute TAGtravel {0,1}
+@attribute TAGurgent {0,1}
+@attribute TAGwork {0,1}
+
+@data
+{316 1,320 1,500 1,620 1,677 1,890 1}
+{28 1,127 1,182 1,320 1,397 1,511 1,762 1,771 1,882 1,886 1}
+{127 1,369 1,535 1,717 1,877 1,881 1,886 1}
+{148 1,551 1,636 1,740 1,883 1,884 1,885 1}
+{1 1,35 1,73 1,195 1,212 1,258 1,307 1,320 1,762 1,781 1,885 1,889 1}
+{93 1,520 1,546 1,650 1,856 1,877 1}
+{108 1,127 1,320 1,526 1,610 1,699 1,878 1,886 1}
+{123 1,139 1,320 1,329 1,762 1,774 1,775 1,855 1,876 1,877 1}
+{26 1,62 1,243 1,320 1,762 1,804 1,817 1,858 1,876 1}
+{32 1,56 1,128 1,397 1,751 1,876 1,890 1}
+{92 1,125 1,397 1,492 1,596 1,876 1,887 1}
+{244 1,718 1,727 1,762 1,883 1,885 1}
+{93 1,127 1,135 1,320 1,526 1,535 1,886 1}
+{233 1,526 1,570 1,853 1,858 1,876 1,878 1}
+{313 1,439 1,694 1,877 1,881 1}
+{198 1,522 1,552 1,623 1,783 1,858 1,885 1}
+{80 1,451 1,689 1,775 1,813 1,823 1,890 1}
+{228 1,255 1,258 1,551 1,609 1,610 1,758 1,781 1,889 1,890 1}
+{226 1,306 1,320 1,382 1,538 1,733 1,816 1,878 1,888 1}
+{589 1,596 1,756 1,775 1,780 1,809 1,876 1,880 1,882 1,887 1}
+{114 1,295 1,382 1,878 1,888 1}
+{238 1,762 1,838 1,877 1,881 1}
+{168 1,307 1,551 1,569 1,883 1,885 1,889 1}
+{140 1,171 1,199 1,535 1,879 1}
+{174 1,558 1,590 1,882 1,890 1}
+{277 1,342 1,402 1,458 1,775 1,876 1,885 1,888 1}
+{320 1,569 1,627 1,683 1,766 1,884 1,885 1}
+{147 1,149 1,320 1,458 1,668 1,779 1,883 1,885 1}
+{71 1,320 1,615 1,640 1,879 1,886 1}
+{139 1,164 1,208 1,377 1,378 1,877 1,878 1}
+{360 1,463 1,661 1,762 1,775 1,794 1,884 1,888 1}
+{90 1,149 1,173 1,264 1,320 1,551 1,882 1,884 1,886 1}
+{53 1,130 1,214 1,270 1,288 1,302 1,416 1,546 1,560 1,762 1,767 1,847 1,885 1,889 1}
+{29 1,69 1,163 1,636 1,759 1,883 1,884 1,885 1}
+{58 1,126 1,313 1,397 1,777 1,883 1,885 1}
+{127 1,535 1,670 1,696 1,886 1,887 1}
+{320 1,535 1,620 1,654 1,714 1,866 1,890 1}
+{127 1,156 1,320 1,437 1,610 1,762 1,878 1,886 1}
+{299 1,565 1,799 1,879 1,885 1}
+{127 1,156 1,295 1,320 1,338 1,662 1,878 1,886 1,889 1}
+{106 1,124 1,648 1,877 1,878 1,881 1}
+{127 1,157 1,320 1,538 1,771 1,847 1,880 1,882 1}
+{23 1,148 1,195 1,456 1,483 1,546 1,727 1,759 1,762 1,883 1,884 1,885 1}
+{108 1,320 1,337 1,340 1,610 1,699 1,886 1,889 1}
+{234 1,317 1,341 1,584 1,775 1,877 1,881 1}
+{39 1,41 1,76 1,171 1,771 1,794 1,882 1,886 1,888 1}
+{26 1,320 1,424 1,477 1,733 1,879 1,890 1}
+{31 1,85 1,342 1,553 1,676 1,775 1,879 1}
+{114 1,337 1,342 1,463 1,535 1,762 1,775 1,882 1,884 1}
+{127 1,535 1,670 1,696 1,882 1,886 1,887 1}
+{29 1,53 1,91 1,268 1,423 1,630 1,670 1,762 1,880 1,882 1,887 1}
+{61 1,198 1,535 1,622 1,766 1,858 1,876 1,885 1}
+{26 1,53 1,76 1,85 1,109 1,140 1,199 1,535 1,551 1,653 1,762 1,879 1,889 1}
+{164 1,447 1,519 1,809 1,877 1,878 1}
+{26 1,114 1,159 1,320 1,737 1,820 1,882 1,888 1}
+{26 1,245 1,320 1,560 1,747 1,762 1,835 1,881 1,882 1}
+{110 1,114 1,535 1,551 1,636 1,861 1,882 1,884 1}
+{53 1,110 1,127 1,320 1,535 1,583 1,643 1,679 1,842 1,882 1,885 1,886 1}
+{229 1,546 1,685 1,693 1,879 1,889 1}
+{350 1,386 1,397 1,762 1,827 1,876 1,878 1}
+{330 1,560 1,747 1,762 1,877 1,881 1}
+{53 1,103 1,233 1,413 1,501 1,775 1,876 1,880 1,890 1}
+{127 1,320 1,335 1,762 1,774 1,775 1,796 1,855 1,886 1,888 1}
+{106 1,336 1,597 1,796 1,858 1,880 1,882 1,887 1}
+{53 1,76 1,98 1,127 1,221 1,595 1,886 1}
+{26 1,53 1,485 1,500 1,557 1,585 1,686 1,721 1,775 1,885 1,889 1}
+{29 1,300 1,320 1,456 1,483 1,652 1,686 1,762 1,883 1,885 1,889 1}
+{26 1,325 1,342 1,670 1,858 1,880 1,887 1}
+{148 1,397 1,456 1,483 1,538 1,546 1,636 1,760 1,762 1,883 1,884 1}
+{453 1,523 1,762 1,877 1,881 1}
+{26 1,295 1,522 1,839 1,858 1,878 1,882 1}
+{242 1,655 1,712 1,766 1,885 1,890 1}
+{49 1,52 1,320 1,396 1,526 1,766 1,885 1,890 1}
+{164 1,526 1,668 1,877 1,881 1}
+{26 1,112 1,325 1,328 1,596 1,858 1,880 1,882 1}
+{238 1,762 1,838 1,877 1,881 1}
+{26 1,389 1,575 1,769 1,878 1,880 1,881 1}
+{509 1,597 1,620 1,686 1,762 1,883 1,885 1,889 1}
+{127 1,829 1,882 1,886 1}
+{305 1,307 1,320 1,628 1,652 1,762 1,767 1,877 1,879 1,889 1,890 1}
+{30 1,295 1,827 1,874 1,878 1,888 1}
+{298 1,307 1,344 1,636 1,882 1,884 1}
+{40 1,53 1,128 1,227 1,762 1,864 1,882 1,883 1}
+{26 1,320 1,468 1,487 1,757 1,767 1,777 1,883 1,885 1}
+{67 1,222 1,484 1,546 1,671 1,762 1,775 1,829 1,876 1,877 1,890 1}
+{95 1,342 1,391 1,484 1,671 1,712 1,762 1,858 1,882 1,887 1,890 1}
+{127 1,698 1,886 1,889 1}
+{26 1,127 1,179 1,345 1,886 1}
+{26 1,53 1,233 1,263 1,417 1,487 1,881 1}
+{53 1,203 1,342 1,365 1,366 1,762 1,775 1,874 1,876 1}
+{307 1,551 1,652 1,767 1,772 1,883 1,885 1,889 1}
+{266 1,326 1,429 1,762 1,788 1,882 1,888 1}
+{174 1,307 1,320 1,762 1,811 1,843 1,889 1,890 1}
+{29 1,70 1,456 1,517 1,533 1,534 1,883 1,884 1,885 1}
+{565 1,646 1,762 1,879 1}
+{52 1,61 1,76 1,223 1,487 1,762 1,876 1,889 1}
+{29 1,134 1,156 1,208 1,382 1,526 1,597 1,767 1,868 1,878 1}
+{236 1,320 1,551 1,636 1,687 1,738 1,766 1,860 1,884 1,885 1}
+{320 1,456 1,483 1,500 1,597 1,620 1,883 1,885 1,889 1}
+{245 1,762 1,835 1,881 1,882 1}
+{242 1,415 1,762 1,877 1,881 1}
+{26 1,76 1,320 1,487 1,538 1,656 1,659 1,675 1,762 1,876 1,880 1,882 1}
+{342 1,425 1,518 1,551 1,734 1,882 1,887 1}
+{164 1,526 1,668 1,809 1,877 1,881 1}
+{342 1,522 1,535 1,684 1,762 1,773 1,775 1,882 1}
+{108 1,526 1,575 1,597 1,878 1,880 1}
+{333 1,397 1,491 1,827 1,880 1,888 1}
+{26 1,53 1,127 1,397 1,425 1,482 1,535 1,546 1,567 1,696 1,797 1,886 1,887 1,888 1}
+{26 1,67 1,500 1,526 1,735 1,766 1,858 1,885 1,889 1}
+{31 1,85 1,149 1,320 1,326 1,424 1,526 1,578 1,733 1,762 1,879 1}
+{382 1,538 1,597 1,720 1,868 1,882 1,888 1}
+{52 1,53 1,61 1,134 1,203 1,261 1,320 1,365 1,366 1,526 1,762 1,876 1,889 1}
+{127 1,195 1,456 1,483 1,551 1,759 1,762 1,883 1,885 1,886 1}
+{53 1,139 1,164 1,762 1,819 1,838 1,877 1,881 1}
+{320 1,469 1,510 1,636 1,877 1,883 1,884 1,885 1}
+{26 1,61 1,85 1,320 1,472 1,487 1,762 1,858 1,876 1,879 1,889 1}
+{37 1,114 1,287 1,320 1,708 1,762 1,879 1,887 1,888 1}
+{26 1,53 1,319 1,336 1,597 1,673 1,858 1,880 1,882 1,887 1}
+{26 1,253 1,320 1,342 1,560 1,880 1,882 1}
+{342 1,425 1,882 1,887 1}
+{127 1,320 1,535 1,546 1,567 1,696 1,862 1,879 1,886 1,890 1}
+{274 1,636 1,762 1,882 1,884 1}
+{341 1,414 1,524 1,546 1,775 1,808 1,878 1,879 1,885 1,889 1}
+{76 1,350 1,453 1,523 1,878 1,889 1}
+{175 1,320 1,445 1,551 1,618 1,620 1,762 1,862 1,885 1}
+{175 1,320 1,446 1,500 1,618 1,751 1,762 1,809 1,858 1,876 1,885 1}
+{242 1,468 1,775 1,866 1,877 1,883 1,885 1}
+{320 1,335 1,397 1,458 1,487 1,610 1,888 1,890 1}
+{114 1,127 1,162 1,320 1,885 1,886 1}
+{320 1,441 1,565 1,646 1,879 1,889 1}
+{15 1,206 1,328 1,342 1,541 1,775 1,880 1,882 1,885 1}
+{47 1,153 1,341 1,764 1,878 1,879 1,889 1}
+{532 1,609 1,681 1,762 1,775 1,885 1,888 1}
+{320 1,526 1,727 1,758 1,885 1}
+{596 1,756 1,887 1}
+{342 1,458 1,762 1,775 1,883 1,885 1}
+{26 1,60 1,320 1,424 1,535 1,890 1}
+{98 1,127 1,284 1,320 1,575 1,762 1,767 1,880 1,886 1}
+{114 1,374 1,535 1,546 1,636 1,722 1,762 1,884 1}
+{67 1,700 1,762 1,796 1,887 1,888 1}
+{272 1,762 1,848 1,881 1,882 1}
+{107 1,526 1,565 1,879 1,889 1}
+{10 1,76 1,237 1,526 1,569 1,876 1,885 1}
+{156 1,320 1,338 1,477 1,878 1,880 1,886 1}
+{383 1,747 1,762 1,790 1,881 1,888 1}
+{349 1,526 1,827 1,878 1}
+{26 1,76 1,522 1,762 1,763 1,839 1,882 1}
+{83 1,342 1,762 1,775 1,886 1}
+{355 1,523 1,762 1,877 1,881 1}
+{5 1,76 1,85 1,342 1,762 1,775 1,781 1,876 1,879 1}
+{167 1,526 1,838 1,877 1}
+{148 1,456 1,483 1,526 1,546 1,636 1,712 1,760 1,883 1,884 1,885 1}
+{361 1,596 1,882 1}
+{53 1,108 1,127 1,610 1,695 1,775 1,824 1,880 1,886 1}
+{29 1,80 1,184 1,232 1,403 1,438 1,477 1,546 1,718 1,775 1,809 1,883 1,884 1,885 1}
+{145 1,451 1,551 1,670 1,775 1,812 1,823 1,830 1,882 1}
+{29 1,214 1,292 1,403 1,830 1,882 1}
+{14 1,107 1,303 1,320 1,480 1,565 1,728 1,868 1,879 1,889 1}
+{137 1,728 1,729 1,752 1,879 1,889 1}
+{29 1,33 1,63 1,219 1,392 1,403 1,546 1,685 1,815 1,823 1,851 1,882 1,887 1}
+{63 1,149 1,663 1,815 1,882 1,887 1}
+{76 1,114 1,589 1,809 1,831 1,884 1,885 1}
+{321 1,551 1,636 1,745 1,809 1,884 1,885 1}
+{307 1,320 1,406 1,456 1,483 1,652 1,884 1,885 1}
+{179 1,354 1,551 1,636 1,809 1,884 1,885 1}
+{34 1,53 1,179 1,231 1,240 1,307 1,652 1,688 1,775 1,885 1,889 1}
+{53 1,73 1,170 1,397 1,421 1,652 1,686 1,713 1,885 1,889 1}
+{61 1,223 1,487 1,876 1}
+{309 1,528 1,813 1,882 1}
+{29 1,359 1,403 1,646 1,649 1,879 1}
+{322 1,710 1,812 1,880 1,882 1}
+{85 1,326 1,461 1,604 1,879 1}
+{76 1,221 1,342 1,697 1,877 1,879 1,886 1}
+{456 1,483 1,749 1,775 1,779 1,814 1,883 1,885 1,889 1,890 1}
+{162 1,231 1,240 1,251 1,320 1,745 1,805 1,885 1,889 1,890 1}
+{136 1,320 1,407 1,666 1,866 1,875 1,888 1}
+{26 1,76 1,253 1,373 1,625 1,762 1,795 1,880 1,882 1}
+{209 1,230 1,320 1,411 1,535 1,609 1,832 1,858 1,864 1,890 1}
+{326 1,340 1,392 1,431 1,526 1,637 1,651 1,706 1,762 1,775 1,880 1,889 1}
+{26 1,35 1,195 1,211 1,212 1,251 1,320 1,393 1,526 1,745 1,762 1,828 1,885 1,890 1}
+{26 1,207 1,312 1,342 1,434 1,775 1,803 1,847 1,882 1,887 1}
+{326 1,355 1,457 1,633 1,762 1,877 1,881 1}
+{76 1,99 1,257 1,337 1,342 1,367 1,526 1,577 1,762 1,775 1,789 1,794 1,888 1,889 1}
+{209 1,257 1,320 1,392 1,403 1,457 1,526 1,750 1,755 1,761 1,775 1,885 1,888 1,890 1}
+{230 1,337 1,397 1,407 1,454 1,762 1,785 1,858 1,873 1,889 1,890 1}
+{8 1,209 1,230 1,320 1,342 1,545 1,546 1,762 1,835 1,864 1,882 1,887 1}
+{148 1,195 1,450 1,456 1,483 1,546 1,636 1,762 1,883 1,884 1,885 1}
+{23 1,76 1,284 1,341 1,397 1,494 1,526 1,530 1,600 1,767 1,801 1,876 1,880 1,885 1}
+{76 1,164 1,462 1,526 1,668 1,809 1,877 1}
+{191 1,243 1,565 1,762 1,879 1}
+{473 1,537 1,636 1,762 1,882 1,884 1,889 1}
+{281 1,550 1,575 1,609 1,762 1,868 1,877 1,880 1,882 1}
+{210 1,242 1,289 1,526 1,877 1,887 1}
+{575 1,770 1,880 1,882 1}
+{99 1,216 1,307 1,559 1,620 1,889 1,890 1}
+{507 1,551 1,636 1,745 1,809 1,883 1,884 1,890 1}
+{88 1,342 1,551 1,775 1,845 1,876 1}
+{76 1,342 1,383 1,675 1,881 1,888 1}
+{26 1,320 1,337 1,352 1,610 1,878 1,886 1,889 1}
+{295 1,500 1,734 1,878 1,888 1}
+{513 1,790 1,877 1,887 1}
+{76 1,526 1,565 1,642 1,807 1,879 1,885 1}
+{320 1,513 1,526 1,565 1,642 1,790 1,879 1,887 1}
+{127 1,320 1,404 1,499 1,782 1,886 1,889 1}
+{190 1,499 1,881 1}
+{51 1,159 1,880 1,882 1,888 1}
+{158 1,402 1,636 1,882 1,884 1,888 1}
+{160 1,565 1,879 1,889 1}
+{189 1,580 1,620 1,652 1,775 1,883 1,890 1}
+{506 1,670 1,712 1,877 1,887 1}
+{320 1,500 1,559 1,620 1,876 1,885 1,890 1}
+{76 1,233 1,672 1,880 1,882 1}
+{516 1,565 1,646 1,879 1,881 1}
+{233 1,340 1,373 1,858 1,880 1,882 1}
+{320 1,469 1,620 1,636 1,883 1,884 1,885 1,890 1}
+{139 1,373 1,551 1,626 1,774 1,855 1,876 1,888 1}
+{127 1,156 1,295 1,320 1,338 1,878 1,886 1}
+{79 1,114 1,320 1,325 1,375 1,565 1,700 1,796 1,879 1,880 1,887 1,888 1}
+{235 1,324 1,474 1,546 1,551 1,575 1,611 1,775 1,888 1,889 1}
+{551 1,679 1,749 1,862 1,885 1,889 1,890 1}
+{26 1,253 1,325 1,373 1,513 1,551 1,858 1,880 1,882 1}
+{242 1,320 1,357 1,512 1,712 1,878 1,881 1,886 1}
+{26 1,76 1,85 1,373 1,477 1,791 1,879 1}
+{108 1,127 1,320 1,325 1,610 1,880 1,886 1}
+{486 1,843 1,882 1}
+{127 1,182 1,771 1,775 1,879 1,882 1,889 1}
+{300 1,546 1,620 1,691 1,876 1,885 1}
+{164 1,668 1,877 1}
+{64 1,295 1,397 1,762 1,848 1,878 1,888 1}
+{340 1,596 1,756 1,858 1,880 1,882 1,887 1}
+{195 1,434 1,809 1,858 1,884 1,885 1,890 1}
+{127 1,535 1,707 1,879 1,886 1,887 1}
+{43 1,195 1,466 1,526 1,546 1,727 1,884 1,885 1}
+{53 1,82 1,342 1,383 1,526 1,562 1,881 1,882 1,888 1}
+{307 1,582 1,876 1,885 1,889 1}
+{98 1,127 1,535 1,880 1,886 1,889 1}
+{162 1,337 1,397 1,551 1,772 1,876 1,885 1}
+{48 1,342 1,397 1,762 1,862 1,876 1,879 1,890 1}
+{85 1,246 1,326 1,337 1,762 1,879 1,888 1,889 1}
+{29 1,71 1,82 1,134 1,241 1,325 1,379 1,526 1,775 1,880 1,881 1,887 1,888 1}
+{195 1,456 1,483 1,546 1,720 1,727 1,762 1,775 1,883 1,884 1,885 1,889 1}
+{16 1,76 1,342 1,762 1,775 1,801 1,876 1,885 1}
+{374 1,458 1,546 1,722 1,762 1,839 1,882 1,889 1}
+{26 1,162 1,326 1,339 1,503 1,539 1,686 1,759 1,767 1,880 1,885 1,889 1}
+{134 1,512 1,526 1,878 1,889 1}
+{223 1,342 1,762 1,775 1,876 1}
+{106 1,313 1,526 1,877 1,887 1,888 1,889 1}
+{133 1,304 1,526 1,879 1,889 1}
+{190 1,233 1,526 1,877 1,881 1}
+{275 1,390 1,392 1,504 1,519 1,535 1,546 1,762 1,839 1,874 1,882 1}
+{141 1,143 1,337 1,526 1,551 1,712 1,879 1,889 1}
+{108 1,127 1,320 1,610 1,674 1,878 1,886 1}
+{320 1,346 1,458 1,551 1,641 1,876 1}
+{320 1,456 1,483 1,652 1,866 1,883 1,885 1}
+{140 1,535 1,653 1,726 1,885 1,889 1}
+{140 1,217 1,535 1,653 1,879 1,889 1}
+{127 1,535 1,836 1,886 1}
+{522 1,541 1,677 1,880 1,882 1}
+{597 1,700 1,796 1,882 1,887 1,888 1}
+{107 1,267 1,565 1,879 1}
+{179 1,313 1,352 1,378 1,613 1,775 1,827 1,878 1}
+{69 1,551 1,608 1,636 1,746 1,883 1,884 1,885 1,889 1}
+{358 1,551 1,620 1,862 1,876 1,885 1}
+{223 1,869 1,876 1}
+{127 1,447 1,535 1,886 1}
+{260 1,661 1,775 1,867 1,880 1}
+{106 1,119 1,313 1,526 1,551 1,889 1}
+{256 1,320 1,464 1,727 1,889 1}
+{53 1,73 1,513 1,551 1,594 1,618 1,858 1,862 1,865 1,876 1,885 1}
+{453 1,523 1,762 1,877 1,881 1}
+{76 1,248 1,541 1,550 1,601 1,876 1,882 1}
+{195 1,313 1,416 1,885 1,889 1}
+{146 1,315 1,320 1,442 1,826 1,880 1,882 1}
+{44 1,237 1,527 1,858 1,880 1,885 1}
+{31 1,154 1,286 1,320 1,402 1,498 1,561 1,686 1,761 1,775 1,879 1,880 1}
+{73 1,307 1,310 1,456 1,483 1,546 1,574 1,809 1,883 1,885 1,889 1}
+{306 1,320 1,492 1,602 1,793 1,840 1,876 1,882 1,887 1}
+{29 1,186 1,489 1,578 1,719 1,879 1,889 1,890 1}
+{29 1,686 1,766 1,811 1,885 1}
+{101 1,377 1,610 1,858 1,877 1,878 1}
+{76 1,245 1,435 1,589 1,809 1,876 1,877 1}
+{42 1,326 1,519 1,589 1,809 1,876 1,878 1}
+{29 1,186 1,420 1,571 1,796 1,880 1,882 1,888 1}
+{139 1,762 1,838 1,877 1,881 1}
+{259 1,313 1,353 1,598 1,876 1,877 1,878 1}
+{73 1,197 1,551 1,862 1,885 1,889 1}
+{6 1,148 1,271 1,636 1,775 1,809 1,863 1,884 1,885 1}
+{375 1,498 1,505 1,514 1,561 1,644 1,775 1,792 1,879 1,880 1}
+{127 1,326 1,328 1,468 1,857 1,882 1,886 1}
+{127 1,152 1,233 1,320 1,877 1,881 1,886 1}
+{76 1,351 1,386 1,762 1,827 1,878 1,889 1}
+{184 1,313 1,408 1,762 1,877 1,881 1,889 1}
+{26 1,127 1,320 1,338 1,384 1,854 1,880 1,886 1}
+{26 1,38 1,76 1,89 1,114 1,762 1,775 1,794 1,796 1,876 1,888 1}
+{320 1,556 1,771 1,834 1,880 1,882 1}
+{140 1,535 1,660 1,726 1,885 1,889 1}
+{204 1,205 1,397 1,398 1,417 1,485 1,775 1,831 1,890 1}
+{26 1,127 1,535 1,631 1,756 1,882 1,886 1,887 1}
+{237 1,456 1,483 1,573 1,620 1,858 1,883 1,885 1}
+{238 1,242 1,762 1,877 1,881 1,889 1}
+{12 1,777 1,866 1,883 1,885 1}
+{139 1,762 1,838 1,877 1,881 1}
+{320 1,337 1,568 1,775 1,796 1,818 1,888 1}
+{29 1,85 1,412 1,748 1,775 1,876 1,879 1}
+{619 1,652 1,766 1,866 1,885 1}
+{320 1,469 1,720 1,727 1,766 1,884 1,885 1}
+{26 1,127 1,129 1,535 1,731 1,886 1,890 1}
+{273 1,397 1,756 1,787 1,882 1,887 1}
+{156 1,233 1,597 1,878 1,881 1}
+{114 1,337 1,451 1,546 1,762 1,772 1,849 1,882 1,884 1,886 1}
+{19 1,76 1,124 1,526 1,589 1,809 1,876 1,878 1}
+{242 1,452 1,877 1}
+{342 1,425 1,739 1,858 1,880 1,887 1}
+{127 1,280 1,475 1,771 1,775 1,776 1,886 1,888 1,889 1}
+{29 1,75 1,458 1,663 1,669 1,762 1,883 1,885 1}
+{172 1,378 1,535 1,620 1,736 1,762 1,858 1,890 1}
+{26 1,253 1,674 1,747 1,858 1,880 1,882 1}
+{72 1,127 1,536 1,544 1,546 1,594 1,762 1,884 1,886 1}
+{208 1,377 1,471 1,526 1,566 1,668 1,762 1,877 1,878 1,881 1}
+{20 1,45 1,85 1,107 1,123 1,279 1,526 1,762 1,775 1,879 1}
+{19 1,99 1,114 1,116 1,123 1,463 1,526 1,762 1,775 1,884 1,889 1}
+{26 1,71 1,117 1,320 1,526 1,632 1,879 1,890 1}
+{187 1,397 1,473 1,574 1,670 1,747 1,762 1,887 1}
+{22 1,76 1,223 1,324 1,342 1,551 1,762 1,775 1,876 1}
+{197 1,370 1,397 1,620 1,762 1,885 1}
+{164 1,526 1,668 1,877 1,881 1}
+{26 1,89 1,306 1,345 1,387 1,397 1,888 1}
+{71 1,100 1,116 1,320 1,375 1,514 1,762 1,879 1,880 1}
+{337 1,383 1,392 1,658 1,712 1,747 1,850 1,881 1}
+{27 1,53 1,127 1,569 1,581 1,605 1,886 1,889 1}
+{102 1,149 1,397 1,762 1,810 1,841 1,888 1}
+{11 1,522 1,541 1,675 1,878 1,881 1}
+{483 1,551 1,636 1,736 1,809 1,821 1,883 1,884 1,890 1}
+{68 1,806 1,827 1,878 1}
+{4 1,26 1,65 1,76 1,202 1,296 1,307 1,564 1,636 1,775 1,882 1,884 1}
+{13 1,17 1,185 1,243 1,388 1,545 1,876 1}
+{330 1,560 1,747 1,762 1,877 1}
+{55 1,472 1,747 1,879 1}
+{113 1,127 1,276 1,311 1,551 1,775 1,833 1,882 1,886 1}
+{216 1,364 1,403 1,489 1,521 1,761 1,762 1,889 1,890 1}
+{238 1,242 1,762 1,877 1,881 1}
+{186 1,301 1,347 1,416 1,502 1,560 1,775 1,809 1,852 1,885 1}
+{7 1,147 1,460 1,508 1,513 1,543 1,551 1,677 1,720 1,883 1,885 1}
+{0 1,476 1,670 1,675 1,716 1,790 1,887 1}
+{138 1,392 1,417 1,487 1,496 1,575 1,754 1,762 1,775 1,880 1}
+{20 1,53 1,121 1,127 1,459 1,465 1,546 1,702 1,877 1,886 1}
+{169 1,173 1,252 1,535 1,551 1,560 1,770 1,882 1,884 1}
+{2 1,25 1,50 1,111 1,161 1,220 1,243 1,876 1}
+{76 1,102 1,326 1,392 1,775 1,780 1,798 1,845 1,878 1,888 1}
+{26 1,127 1,535 1,732 1,886 1,888 1}
+{114 1,320 1,456 1,483 1,620 1,636 1,883 1,884 1,890 1}
+{320 1,342 1,500 1,620 1,775 1,876 1,883 1,890 1}
+{26 1,127 1,318 1,535 1,886 1,887 1}
+{318 1,325 1,596 1,858 1,880 1,882 1,887 1}
+{97 1,164 1,526 1,877 1,881 1}
+{124 1,127 1,320 1,470 1,526 1,581 1,878 1,885 1,886 1}
+{223 1,342 1,762 1,775 1,876 1}
+{114 1,124 1,127 1,320 1,470 1,526 1,878 1,884 1,885 1,886 1}
+{26 1,127 1,715 1,877 1,886 1}
+{164 1,331 1,762 1,877 1,881 1}
+{233 1,487 1,889 1}
+{85 1,342 1,762 1,775 1,879 1}
+{283 1,490 1,725 1,762 1,879 1,889 1}
+{17 1,342 1,545 1,551 1,682 1,775 1,880 1,882 1}
+{114 1,449 1,546 1,636 1,724 1,762 1,882 1,884 1}
+{439 1,762 1,837 1,877 1,881 1}
+{93 1,106 1,320 1,376 1,526 1,638 1,889 1}
+{45 1,195 1,244 1,249 1,762 1,885 1}
+{127 1,153 1,320 1,712 1,762 1,778 1,878 1,886 1}
+{26 1,325 1,386 1,397 1,762 1,827 1,880 1,889 1}
+{318 1,324 1,342 1,551 1,775 1,790 1,882 1,887 1}
+{36 1,195 1,320 1,500 1,546 1,620 1,711 1,762 1,876 1,885 1}
+{26 1,320 1,424 1,683 1,733 1,890 1}
+{26 1,114 1,816 1,888 1}
+{37 1,233 1,238 1,242 1,762 1,877 1,881 1}
+{53 1,114 1,148 1,310 1,399 1,401 1,456 1,483 1,546 1,636 1,762 1,883 1,884 1,885 1,889 1}
+{3 1,31 1,85 1,326 1,762 1,859 1,879 1}
+{26 1,106 1,127 1,165 1,515 1,535 1,733 1,762 1,767 1,775 1,822 1,882 1,886 1,887 1}
+{157 1,372 1,397 1,451 1,522 1,546 1,606 1,762 1,839 1,882 1}
+{243 1,342 1,762 1,775 1,876 1,889 1}
+{326 1,453 1,645 1,762 1,846 1,877 1,881 1}
+{29 1,69 1,207 1,630 1,636 1,762 1,870 1,884 1,887 1}
+{45 1,247 1,269 1,308 1,371 1,762 1,852 1,862 1,890 1}
+{225 1,262 1,320 1,351 1,377 1,514 1,762 1,877 1,878 1,879 1}
+{314 1,535 1,747 1,762 1,775 1,872 1,888 1}
+{26 1,29 1,183 1,320 1,485 1,608 1,620 1,686 1,746 1,751 1,762 1,775 1,883 1,885 1,889 1}
+{71 1,106 1,297 1,648 1,762 1,775 1,878 1,887 1,889 1}
+{325 1,342 1,762 1,763 1,775 1,858 1,880 1,882 1}
+{242 1,385 1,494 1,874 1,885 1,890 1}
+{31 1,52 1,85 1,342 1,553 1,762 1,775 1,879 1}
+{53 1,121 1,127 1,871 1,886 1}
+{238 1,242 1,762 1,877 1,881 1}
+{397 1,548 1,565 1,604 1,646 1,762 1,879 1,889 1}
+{26 1,157 1,194 1,325 1,342 1,546 1,762 1,775 1,858 1,880 1,882 1}
+{53 1,213 1,307 1,456 1,483 1,652 1,762 1,883 1,885 1,890 1}
+{78 1,114 1,278 1,343 1,636 1,720 1,762 1,882 1,884 1}
+{342 1,500 1,616 1,705 1,762 1,775 1,858 1,876 1}
+{342 1,363 1,607 1,762 1,775 1,887 1}
+{127 1,709 1,712 1,886 1}
+{56 1,60 1,320 1,762 1,775 1,796 1,888 1}
+{46 1,118 1,325 1,342 1,762 1,775 1,858 1,880 1,882 1}
+{164 1,668 1,819 1,874 1,877 1,881 1}
+{342 1,397 1,603 1,742 1,762 1,808 1,887 1}
+{26 1,54 1,306 1,320 1,340 1,610 1,762 1,886 1,889 1}
+{26 1,106 1,147 1,551 1,762 1,774 1,881 1,889 1}
+{326 1,548 1,563 1,591 1,604 1,762 1,889 1}
+{320 1,456 1,469 1,483 1,620 1,727 1,762 1,883 1,884 1}
+{147 1,309 1,551 1,704 1,762 1,874 1,890 1}
+{127 1,320 1,404 1,481 1,487 1,762 1,881 1,886 1}
+{320 1,409 1,410 1,727 1,762 1,884 1,890 1}
+{76 1,94 1,383 1,392 1,410 1,692 1,762 1,850 1,876 1,881 1}
+{144 1,158 1,340 1,397 1,500 1,762 1,876 1}
+{156 1,320 1,342 1,383 1,881 1,888 1}
+{71 1,132 1,320 1,350 1,639 1,762 1,878 1}
+{182 1,320 1,565 1,579 1,762 1,768 1,771 1,879 1,886 1}
+{53 1,479 1,525 1,571 1,762 1,827 1,888 1}
+{342 1,456 1,458 1,483 1,762 1,775 1,883 1,885 1}
+{99 1,114 1,381 1,522 1,636 1,684 1,762 1,882 1,884 1}
+{242 1,452 1,762 1,877 1}
+{320 1,342 1,572 1,592 1,762 1,775 1,882 1}
+{26 1,115 1,196 1,377 1,521 1,775 1,874 1,878 1,890 1}
+{60 1,320 1,348 1,678 1,762 1,879 1,890 1}
+{26 1,87 1,285 1,558 1,880 1,882 1,890 1}
+{151 1,162 1,242 1,291 1,320 1,443 1,762 1,885 1,890 1}
+{26 1,96 1,320 1,337 1,497 1,535 1,874 1,881 1,886 1}
+{66 1,106 1,158 1,664 1,762 1,874 1,882 1,887 1}
+{127 1,156 1,320 1,325 1,610 1,874 1,880 1,886 1}
+{164 1,668 1,874 1,877 1,881 1}
+{179 1,208 1,313 1,878 1,890 1}
+{85 1,140 1,199 1,397 1,589 1,762 1,809 1,879 1,889 1}
+{287 1,320 1,334 1,607 1,762 1,885 1,890 1}
+{26 1,66 1,193 1,597 1,762 1,796 1,888 1}
+{29 1,174 1,186 1,408 1,547 1,624 1,690 1,762 1,764 1,881 1}
+{342 1,519 1,762 1,763 1,775 1,858 1,874 1,876 1,878 1}
+{81 1,397 1,453 1,523 1,762 1,877 1,881 1}
+{150 1,243 1,320 1,342 1,395 1,762 1,775 1,876 1,889 1}
+{487 1,620 1,621 1,885 1,889 1}
+{318 1,342 1,513 1,551 1,607 1,762 1,775 1,887 1}
+{116 1,328 1,599 1,780 1,880 1,882 1}
+{114 1,463 1,661 1,775 1,885 1,889 1}
+{307 1,456 1,469 1,483 1,727 1,883 1,884 1,885 1}
+{114 1,800 1,816 1,879 1,888 1}
+{61 1,243 1,487 1,876 1,889 1}
+{127 1,318 1,535 1,696 1,886 1,887 1}
+{164 1,526 1,668 1,881 1}
+{79 1,565 1,780 1,879 1,880 1}
+{223 1,342 1,775 1,876 1}
+{386 1,397 1,806 1,827 1,878 1,889 1}
+{307 1,582 1,610 1,885 1}
+{229 1,685 1,725 1,879 1,889 1}
+{297 1,331 1,377 1,397 1,877 1}
+{356 1,424 1,723 1,827 1,882 1,888 1}
+{29 1,176 1,436 1,546 1,554 1,617 1,620 1,686 1,745 1,762 1,775 1,885 1,889 1}
+{212 1,287 1,555 1,876 1,885 1}
+{114 1,372 1,606 1,636 1,882 1,884 1}
+{340 1,342 1,522 1,775 1,858 1,880 1,882 1}
+{127 1,239 1,371 1,535 1,886 1,889 1}
+{117 1,224 1,481 1,793 1,858 1,890 1}
+{342 1,587 1,775 1,876 1,887 1}
+{124 1,377 1,495 1,749 1,858 1,877 1,878 1}
+{177 1,195 1,282 1,456 1,483 1,883 1,885 1}
+{57 1,59 1,320 1,424 1,485 1,686 1,775 1,889 1,890 1}
+{134 1,188 1,584 1,881 1,889 1}
+{108 1,320 1,342 1,448 1,575 1,775 1,882 1}
+{29 1,171 1,403 1,419 1,884 1,885 1}
+{397 1,427 1,743 1,827 1,880 1,888 1}
+{103 1,142 1,397 1,418 1,657 1,882 1,888 1}
+{88 1,342 1,775 1,876 1,889 1}
+{139 1,535 1,589 1,809 1,876 1,890 1}
+{224 1,320 1,500 1,597 1,635 1,647 1,890 1}
+{233 1,295 1,342 1,734 1,775 1,878 1}
+{342 1,444 1,575 1,775 1,880 1,882 1}
+{149 1,246 1,250 1,290 1,634 1,879 1,886 1}
+{31 1,294 1,487 1,882 1}
+{242 1,360 1,462 1,786 1,876 1,882 1}
+{127 1,535 1,784 1,886 1,888 1}
+{756 1,854 1,858 1,876 1,880 1,882 1,887 1}
+{112 1,611 1,771 1,888 1,889 1}
+{453 1,523 1,762 1,877 1,881 1}
+{18 1,148 1,456 1,483 1,546 1,883 1,884 1,885 1}
+{240 1,320 1,569 1,745 1,866 1,885 1,890 1}
+{47 1,71 1,134 1,293 1,320 1,512 1,775 1,879 1,881 1,889 1}
+{53 1,320 1,433 1,610 1,844 1,854 1,878 1,879 1,889 1}
+{112 1,284 1,328 1,876 1,880 1,882 1}
+{238 1,242 1,762 1,877 1,881 1}
+{565 1,646 1,762 1,879 1,889 1}
+{43 1,307 1,467 1,551 1,749 1,885 1,889 1,890 1}
+{12 1,79 1,279 1,426 1,565 1,775 1,879 1,880 1}
+{478 1,546 1,636 1,665 1,762 1,882 1,884 1}
+{320 1,374 1,629 1,722 1,771 1,880 1,882 1,885 1,889 1}
+{120 1,320 1,456 1,483 1,526 1,565 1,749 1,775 1,866 1,879 1,883 1,885 1,889 1}
+{155 1,226 1,320 1,428 1,538 1,733 1,880 1,882 1}
+{320 1,586 1,611 1,699 1,878 1}
+{84 1,104 1,275 1,451 1,546 1,762 1,765 1,839 1,881 1,882 1}
+{108 1,526 1,575 1,769 1,878 1,880 1}
+{29 1,44 1,148 1,332 1,636 1,883 1,884 1,885 1}
+{331 1,397 1,762 1,862 1,877 1,881 1}
+{127 1,156 1,610 1,878 1,886 1,889 1}
+{588 1,596 1,762 1,882 1}
+{85 1,342 1,762 1,775 1,879 1}
+{187 1,394 1,397 1,576 1,762 1,876 1}
+{70 1,195 1,291 1,320 1,405 1,609 1,885 1,890 1}
+{53 1,342 1,426 1,432 1,522 1,762 1,775 1,858 1,880 1,882 1}
+{97 1,164 1,877 1,889 1,890 1}
+{139 1,147 1,549 1,877 1,890 1}
+{127 1,192 1,368 1,882 1,889 1}
+{430 1,455 1,492 1,546 1,612 1,762 1,839 1,882 1,887 1}
+{320 1,342 1,383 1,762 1,848 1,881 1,888 1,889 1}
+{201 1,648 1,762 1,802 1,890 1}
+{200 1,275 1,417 1,451 1,546 1,762 1,825 1,882 1}
+{26 1,535 1,575 1,769 1,868 1,878 1,889 1}
+{397 1,440 1,526 1,699 1,827 1,878 1,888 1}
+{107 1,267 1,565 1,762 1,879 1}
+{327 1,360 1,380 1,636 1,762 1,775 1,882 1,884 1}
+{342 1,362 1,762 1,775 1,882 1,887 1,888 1,889 1}
+{456 1,483 1,609 1,620 1,876 1,877 1,883 1,884 1,885 1,889 1,890 1}
+{108 1,127 1,320 1,323 1,338 1,575 1,877 1,880 1,886 1,889 1}
+{445 1,493 1,529 1,551 1,614 1,636 1,883 1,884 1,885 1,890 1}
+{195 1,456 1,483 1,636 1,759 1,883 1,884 1,885 1,890 1}
+{233 1,295 1,320 1,324 1,342 1,383 1,551 1,878 1,881 1,882 1,888 1}
+{223 1,342 1,762 1,775 1,781 1,876 1,882 1,888 1,889 1}
+{127 1,535 1,741 1,877 1,879 1,882 1,886 1}
+{127 1,730 1,877 1,879 1,886 1,889 1}
+{106 1,313 1,877 1,882 1,889 1}
+{551 1,620 1,621 1,862 1,877 1,885 1,890 1}
+{307 1,554 1,569 1,593 1,652 1,745 1,877 1,885 1,890 1}
+{164 1,383 1,877 1,881 1,882 1}
+{29 1,37 1,71 1,287 1,325 1,570 1,700 1,796 1,858 1,878 1,880 1,882 1,888 1}
+{538 1,575 1,847 1,879 1,880 1,882 1,889 1}
+{9 1,320 1,342 1,422 1,456 1,483 1,775 1,781 1,876 1,883 1,885 1,889 1,890 1}
+{178 1,727 1,745 1,884 1,885 1,890 1}
+{240 1,324 1,540 1,551 1,745 1,858 1,862 1,876 1,885 1,890 1}
+{67 1,744 1,775 1,796 1,880 1,882 1,888 1,890 1}
+{60 1,77 1,320 1,884 1,885 1,888 1,890 1}
+{122 1,320 1,351 1,609 1,877 1,878 1,881 1}
+{91 1,123 1,195 1,456 1,483 1,542 1,546 1,775 1,880 1,885 1,888 1,890 1}
+{25 1,76 1,215 1,600 1,742 1,782 1,790 1,858 1,876 1,880 1,882 1,887 1}
+{313 1,753 1,762 1,877 1,881 1,889 1,890 1}
+{99 1,107 1,267 1,565 1,762 1,781 1,879 1,881 1,889 1}
+{74 1,195 1,456 1,483 1,500 1,546 1,781 1,858 1,876 1,883 1,885 1}
+{158 1,265 1,400 1,571 1,775 1,796 1,858 1,880 1,882 1,885 1,888 1}
+{195 1,377 1,408 1,531 1,858 1,881 1,885 1,890 1}
+{127 1,195 1,320 1,456 1,483 1,493 1,535 1,762 1,883 1,885 1,886 1}
+{26 1,99 1,108 1,127 1,166 1,338 1,490 1,519 1,539 1,762 1,878 1,886 1,889 1}
+{26 1,86 1,106 1,320 1,514 1,526 1,535 1,553 1,676 1,775 1,879 1,882 1,887 1}
+{195 1,450 1,663 1,703 1,847 1,884 1,885 1}
+{131 1,170 1,320 1,526 1,538 1,607 1,620 1,701 1,885 1,890 1}
+{26 1,105 1,127 1,181 1,320 1,680 1,781 1,885 1,886 1,889 1}
+{24 1,76 1,180 1,341 1,526 1,699 1,775 1,876 1,877 1,878 1}
+{164 1,331 1,762 1,809 1,877 1,881 1}
+{21 1,76 1,254 1,526 1,679 1,699 1,775 1,876 1,878 1,885 1,888 1}
+{320 1,439 1,488 1,535 1,636 1,667 1,762 1,877 1,881 1,884 1}
+{218 1,526 1,531 1,565 1,879 1,881 1,889 1}
