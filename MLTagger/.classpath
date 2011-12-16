@@ -5,5 +5,6 @@
 	<classpathentry kind="lib" path="lib/mulan.jar"/>
 	<classpathentry kind="lib" path="lib/mulan-src.jar"/>
 	<classpathentry kind="lib" path="lib/weka.jar"/>
+	<classpathentry kind="lib" path="lib/snowball.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
