@@ -10,9 +10,10 @@ import mulan.classifier.MultiLabelOutput;
 import mulan.classifier.meta.RAkEL;
 import mulan.classifier.transformation.LabelPowerset;
 import mulan.data.MultiLabelInstances;
+import weka.classifiers.bayes.NaiveBayes;
+import weka.classifiers.functions.SMO;
 import weka.classifiers.trees.J48;
-import weka.core.Attribute;
-import weka.core.FastVector;
+import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.Utils;
@@ -27,15 +28,20 @@ import java.io.ObjectOutputStream;
 
 public class MLTagger {
 	
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception {		
+		boolean isSingleLineInput = false;  
+		boolean isBuildingModel = false; 
+			
 		// collect the filenames from the arguments
-	        String text = Utils.getOption("text", args); //temp
+
+		if (Utils.getFlag("i", args)) { isSingleLineInput = true; }
+		if (Utils.getFlag("b", args)) { isBuildingModel = true; }
+		
+	    String text = Utils.getOption("text", args);
 		String arffFilename = Utils.getOption("arff", args);
 		String xmlFilename = Utils.getOption("xml", args);
 		String unlabeledFilename = Utils.getOption("unlabeled", args);
 		
-		boolean isSingleLineInput = false;  // werkt nog niet voor true
-		boolean isBuildingModel = false; // werkt voor true en false
 		
 		// testing, clean up later
 		List<MultiLabelOutput> predictions = new MLTagger().tag(text, arffFilename, xmlFilename, unlabeledFilename, isSingleLineInput, isBuildingModel);
@@ -49,37 +55,34 @@ public class MLTagger {
     public MLTagger() {
 		// Default constructor
     }
-	
-    public Instances string2Instances(String text) throws InvalidDataException, ModelInitializationException, Exception {
-    	////TEMP
-    	// Declare two numeric attributes
-    	 String [] splitText = text.split(" ");
-    	 // Declare a nominal attribute along with its values
-    	 FastVector fvWekaAttributes = new FastVector(splitText.length);
-     	 FastVector fvNominalVal = new FastVector(2);
-    	 fvNominalVal.addElement("0");
-    	 fvNominalVal.addElement("1");
-    	 
-    	 // Build the feature vector
-    	 for (int i = 0; i < splitText.length-1; i++) {
-    		 System.out.println(splitText[i]);
-    		 Attribute attribute = new Attribute(splitText[i], fvNominalVal);
-    		 fvWekaAttributes.addElement(attribute);
-    	 }
-    	return new Instances("tag_recommendation", fvWekaAttributes, 10);
-    }
-	 // Declare the feature vector
-	 
     
+    public Instances string2Instances(String text, MultiLabelInstances multilabelInstances) throws InvalidDataException, ModelInitializationException, Exception {
+    	 String [] splitText = text.split(" ");
+         Instances ins = multilabelInstances.getDataSet();
+         Instance unknown = new DenseInstance(ins.numAttributes());        
+         unknown.setDataset(multilabelInstances.getDataSet());
+         for (int i = 0; i < splitText.length; i++) {
+        	 for (int j = 0; j < ins.numAttributes(); j++) {
+        		 if (ins.attribute(j).name().equals(splitText[i])) {
+        			 unknown.setValue(ins.attribute(j),1); 
+        		 }
+        	 }
+        }	
+        Instances instances = multilabelInstances.getDataSet();
+        instances.clear();
+        instances.add(unknown);
+    	return instances;
+    }
+	 
     //Note to self: parameters have to be cleaned up get rid of bools etc. just do something clever.
 	public List<MultiLabelOutput> tag(String text, String arffFilename, String xmlFilename, String unlabeledFilename, boolean isSingleLineInput, boolean isBuildingModel) throws InvalidDataException, ModelInitializationException, Exception {
 		// Loading the data       temporarily laced with booleans 
 		RAkEL model = initializeRAkEL(false, true, text, xmlFilename, arffFilename);
-
+		
 		// Loading the unlabeledData 
 		Instances unlabeledData = null;
 		if (isSingleLineInput) {
-			unlabeledData = string2Instances(text);
+			unlabeledData = string2Instances(text, new MultiLabelInstances(arffFilename, xmlFilename));
 		} else {
 			unlabeledData = getUnlabeledData(unlabeledFilename);
 		}		
@@ -111,7 +114,9 @@ public class MLTagger {
 		MultiLabelInstances dataset;
 		RAkEL model;
 		if (isBuildingModel) {
-			model = new RAkEL(new LabelPowerset(new J48()));
+			//model = new RAkEL(new LabelPowerset(new J48()));
+			model = new RAkEL(new LabelPowerset(new SMO()));
+			//model = new RAkEL(new LabelPowerset(new NaiveBayes()));
 			dataset = new MultiLabelInstances(arffFilename, xmlFilename);
 			model.build(dataset);	
 			// Save the learner to a file
@@ -156,17 +161,4 @@ public class MLTagger {
 		objectIn.close();
 		return object;
 	}
-	
-//	private void writeLearnerToFile(MultiLabelLearner learner, String location) throws Exception {
-//	ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(location)));
-//	objectOut.writeObject(learner); // Write object
-//	objectOut.close(); // Close the output stream
-//}
-//	  
-//private MultiLabelLearner readLearnerFromFile(String location) throws Exception {
-//	ObjectInputStream objectIn = new ObjectInputStream(new BufferedInputStream(new FileInputStream(location)));
-//	MultiLabelLearner object = (MultiLabelLearner) objectIn.readObject();
-//	objectIn.close();
-//	return object;
-//}
 }
