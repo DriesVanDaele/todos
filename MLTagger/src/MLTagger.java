@@ -1,9 +1,7 @@
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import mulan.classifier.InvalidDataException;
 import mulan.classifier.ModelInitializationException;
@@ -19,6 +17,7 @@ import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.Utils;
+import weka.core.stemmers.SnowballStemmer;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -34,20 +33,22 @@ public class MLTagger {
     public static void main(String[] args) throws Exception {		
     	boolean isSingleLineInput = false;  
     	boolean isBuildingModel = false; 
-    	
+    	boolean isUsingStemming = false;
     	// check some flash for the state of the booleans
     	if (Utils.getFlag("i", args)) { isSingleLineInput = true; }
     	if (Utils.getFlag("b", args)) { isBuildingModel = true; }
+    	if (Utils.getFlag("s", args)) { isUsingStemming = true; }
     	
     	// collect the filenames from the arguments
+    	String modelFileName = Utils.getOption("model", args);
     	String text = Utils.getOption("text", args);
     	String arffFilename = Utils.getOption("arff", args);
     	String xmlFilename = Utils.getOption("xml", args);
     	String unlabeledFilename = Utils.getOption("unlabeled", args);
 	
     	MLTagger tagger = new MLTagger();
-    	RAkEL model = tagger.initializeRAkEL(isSingleLineInput, isBuildingModel, text, xmlFilename, arffFilename);
-    	Instances unlabeledData = tagger.getInstances(text, arffFilename, xmlFilename, unlabeledFilename, isSingleLineInput);
+    	RAkEL model = tagger.initializeRAkEL(isSingleLineInput, isBuildingModel, text, xmlFilename, arffFilename, modelFileName);
+    	Instances unlabeledData = tagger.getInstances(text, arffFilename, xmlFilename, unlabeledFilename, isSingleLineInput, isUsingStemming);
     	List<String> suggestedTags = tagger.getSuggestedTagsWithInfo(unlabeledData, new MultiLabelInstances(arffFilename, xmlFilename), model);
     	
 //    	List<MultiLabelOutput> multiLabelOutputs = tagger.getPredictions(model, unlabeledData);
@@ -76,8 +77,16 @@ public class MLTagger {
 	
     public MLTagger() { } // Default constructor
     
-    public Instances string2Instances(String text, MultiLabelInstances multilabelInstances) throws InvalidDataException, ModelInitializationException, Exception {
+    public Instances string2Instances(String text, MultiLabelInstances multilabelInstances, boolean isUsingStemming) throws InvalidDataException, ModelInitializationException, Exception {
     	 String [] splitText = text.split(" ");
+    	 if (isUsingStemming) {
+    		// currently using porter, since I haven't atm got .arff files for
+    		// other types, even though 'english' is said to be slightly, though strictly better
+     		SnowballStemmer stemmer = new SnowballStemmer();
+     		for (int i = 0; i < splitText.length; i++) {
+     			splitText[i] = stemmer.stem(splitText[i]);
+     		}
+     	 }
          Instances ins = multilabelInstances.getDataSet();
          Instance unknown = new DenseInstance(ins.numAttributes());        
          unknown.setDataset(multilabelInstances.getDataSet());
@@ -94,10 +103,10 @@ public class MLTagger {
          return instances;
     }
 	 
-    private Instances getInstances(String text, String arffFilename, String xmlFilename, String unlabeledFilename, boolean isSingleLineInput) throws InvalidDataException, ModelInitializationException, InvalidDataFormatException, Exception {
+    private Instances getInstances(String text, String arffFilename, String xmlFilename, String unlabeledFilename, boolean isSingleLineInput, boolean isUsingStemming) throws InvalidDataException, ModelInitializationException, InvalidDataFormatException, Exception {
     	Instances unlabeledData = null;
     	if (isSingleLineInput) {
-    	    unlabeledData = string2Instances(text, new MultiLabelInstances(arffFilename, xmlFilename));
+    	    unlabeledData = string2Instances(text, new MultiLabelInstances(arffFilename, xmlFilename), isUsingStemming);
     	} else {
     	    unlabeledData = getUnlabeledData(unlabeledFilename);
     	}		
@@ -120,7 +129,7 @@ public class MLTagger {
     	return suggestedTags;
     }
     
-    private RAkEL initializeRAkEL(boolean isSingleLineInput, boolean isBuildingModel, String text, String xmlFilename, String arffFilename) throws Exception {
+    private RAkEL initializeRAkEL(boolean isSingleLineInput, boolean isBuildingModel, String text, String xmlFilename, String arffFilename, String modelFileName) throws Exception {
 	MultiLabelInstances dataset;
 	RAkEL model;
 	if (isBuildingModel) {
@@ -129,11 +138,11 @@ public class MLTagger {
 	    //model = new RAkEL(new LabelPowerset(new NaiveBayes()));
 	    dataset = new MultiLabelInstances(arffFilename, xmlFilename);
 	    model.build(dataset);	
-	    // Save the learner to a file
-	    writeRAkELToFile(model, "model.bin");
+	    // Save the learner to a fileSMO
+	    writeRAkELToFile(model, modelFileName);
 	    return model;
 	} else {
-	    model = readRAkELFromFile("model.bin");
+	    model = readRAkELFromFile(modelFileName);
 	    return model;
 	}
     }
@@ -162,7 +171,7 @@ public class MLTagger {
 	objectOut.writeObject(model); // Write the object
 	objectOut.close(); // Close the output stream
     }
-    
+   
     // slash will probably have to be replaced by a backslash under windows 
     private RAkEL readRAkELFromFile(String name) throws Exception {
 	File f1 = new File("./temp/" + name);  
