@@ -3,12 +3,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import mulan.classifier.InvalidDataException;
 import mulan.classifier.ModelInitializationException;
 import mulan.classifier.MultiLabelOutput;
 import mulan.classifier.meta.RAkEL;
 import mulan.classifier.transformation.LabelPowerset;
+import mulan.data.InvalidDataFormatException;
 import mulan.data.MultiLabelInstances;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.SMO;
@@ -26,28 +28,50 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+// Prints suggested tags
+// Each outputline consists of a suggested tag followed by its confidence
 public class MLTagger {
     public static void main(String[] args) throws Exception {		
-	boolean isSingleLineInput = false;  
-	boolean isBuildingModel = false; 
+    	boolean isSingleLineInput = false;  
+    	boolean isBuildingModel = false; 
+    	
+    	// check some flash for the state of the booleans
+    	if (Utils.getFlag("i", args)) { isSingleLineInput = true; }
+    	if (Utils.getFlag("b", args)) { isBuildingModel = true; }
+    	
+    	// collect the filenames from the arguments
+    	String text = Utils.getOption("text", args);
+    	String arffFilename = Utils.getOption("arff", args);
+    	String xmlFilename = Utils.getOption("xml", args);
+    	String unlabeledFilename = Utils.getOption("unlabeled", args);
 	
-	// check some flash for the state of the booleans
-	if (Utils.getFlag("i", args)) { isSingleLineInput = true; }
-	if (Utils.getFlag("b", args)) { isBuildingModel = true; }
-	
-	// collect the filenames from the arguments
-	String text = Utils.getOption("text", args);
-	String arffFilename = Utils.getOption("arff", args);
-	String xmlFilename = Utils.getOption("xml", args);
-	String unlabeledFilename = Utils.getOption("unlabeled", args);
-	
-	//TODO: clean up predictions & map prediction numbers to original tags
-	List<MultiLabelOutput> predictions = new MLTagger().tag(text, arffFilename, xmlFilename, unlabeledFilename, isSingleLineInput, isBuildingModel);
-	
-	// Temporary: print the output
-	for (MultiLabelOutput prediction : predictions) { 
-	    System.out.println(prediction);
-	}
+    	MLTagger tagger = new MLTagger();
+    	RAkEL model = tagger.initializeRAkEL(isSingleLineInput, isBuildingModel, text, xmlFilename, arffFilename);
+    	Instances unlabeledData = tagger.getInstances(text, arffFilename, xmlFilename, unlabeledFilename, isSingleLineInput);
+    	List<String> suggestedTags = tagger.getSuggestedTagsWithInfo(unlabeledData, new MultiLabelInstances(arffFilename, xmlFilename), model);
+    	
+//    	List<MultiLabelOutput> multiLabelOutputs = tagger.getPredictions(model, unlabeledData);
+//    	
+//    	//UNCOMMENT THIS IF YOU WANT SOME MORE SPECIFIC INFO (there still seems to be something wrong...)
+//    	for (MultiLabelOutput output : multiLabelOutputs) {
+//    		  if (output.hasBipartition()) {
+//                  String bipartion = Arrays.toString(output.getBipartition());
+//                  System.out.println("Predicted bipartion: " + bipartion);
+//              }
+//    		  // SOMETHING SEEMS WRONG WITH RANKING...
+//              if (output.hasRanking()) {
+//                  String ranking = Arrays.toString(output.getRanking());
+//                  System.out.println("Predicted ranking: " + ranking);
+//              }
+//              if (output.hasConfidences()) {
+//                  String confidences = Arrays.toString(output.getConfidences());
+//                  System.out.println("Predicted confidences: " + confidences);
+//              }
+//    	}   
+   	
+    	for (String tag : suggestedTags) {
+    		System.out.println(tag);
+    	}	
     }
 	
     public MLTagger() { } // Default constructor
@@ -63,50 +87,39 @@ public class MLTagger {
         			 unknown.setValue(ins.attribute(j),1); 
         		 }
         	 }
-	 }	
-	 Instances instances = multilabelInstances.getDataSet();
-	 instances.clear();
-	 instances.add(unknown);
-	 return instances;
+         }	
+         Instances instances = multilabelInstances.getDataSet();
+         instances.clear();
+         instances.add(unknown);
+         return instances;
     }
 	 
-    //Note to self: parameters have to be cleaned up get rid of bools etc. just do something clever.
-    public List<MultiLabelOutput> tag(String text, String arffFilename, String xmlFilename, String unlabeledFilename, boolean isSingleLineInput, boolean isBuildingModel) throws InvalidDataException, ModelInitializationException, Exception {
-	// Loading the data 
-	RAkEL model = initializeRAkEL(isSingleLineInput, isBuildingModel, text, xmlFilename, arffFilename);
-	
-	// Loading the unlabeledData 
-	Instances unlabeledData = null;
-	if (isSingleLineInput) {
-	    unlabeledData = string2Instances(text, new MultiLabelInstances(arffFilename, xmlFilename));
-	} else {
-	    unlabeledData = getUnlabeledData(unlabeledFilename);
-	}		
-	MultiLabelInstances multiUnlabeledData = new MultiLabelInstances(unlabeledData, xmlFilename);
-
-	// Print predictions
-	int numInstances = multiUnlabeledData.getNumInstances();
-	for (int instanceIndex = 0; instanceIndex < numInstances; instanceIndex++) {
-            Instance instance = multiUnlabeledData.getDataSet().instance(instanceIndex);
-            MultiLabelOutput output = model.makePrediction(instance);
-	    
-            if (output.hasBipartition()) {
-                String bipartion = Arrays.toString(output.getBipartition());
-                System.out.println("Predicted bipartion: " + bipartion);
-            }
-            if (output.hasRanking()) {
-                String ranking = Arrays.toString(output.getRanking());
-                System.out.println("Predicted ranking: " + ranking);
-            }
-            if (output.hasConfidences()) {
-                String confidences = Arrays.toString(output.getConfidences());
-                System.out.println("Predicted confidences: " + confidences);
-            }
-	}
-	// Perform a prediction for each instance in the dataset and return
-	return getPredictions(model, unlabeledData);
+    private Instances getInstances(String text, String arffFilename, String xmlFilename, String unlabeledFilename, boolean isSingleLineInput) throws InvalidDataException, ModelInitializationException, InvalidDataFormatException, Exception {
+    	Instances unlabeledData = null;
+    	if (isSingleLineInput) {
+    	    unlabeledData = string2Instances(text, new MultiLabelInstances(arffFilename, xmlFilename));
+    	} else {
+    	    unlabeledData = getUnlabeledData(unlabeledFilename);
+    	}		
+    	return unlabeledData;
     }
-	
+    
+     private List<String> getSuggestedTagsWithInfo(Instances unlabeledData, MultiLabelInstances multiUnlabeledData, RAkEL model) throws InvalidDataException, ModelInitializationException, Exception {
+    	List<String> suggestedTags = new ArrayList<String>();
+    	weka.core.Attribute [] attributes = {};
+    	attributes = multiUnlabeledData.getLabelAttributes().toArray(attributes);
+    	List<MultiLabelOutput> predictions = getPredictions(model, unlabeledData);
+    	for (MultiLabelOutput prediction : predictions) { 
+    	    for (int i = 0; i < prediction.getBipartition().length; i++) {
+    	    	if (prediction.getBipartition()[i]) {	
+    	    		// THIS CODE REQUIRES THE TAGS TO BE ADDED LAST IN THE ARFF, can't find a cleaner solution :s
+    	       		suggestedTags.add(multiUnlabeledData.getDataSet().attribute(multiUnlabeledData.getDataSet().numAttributes()-multiUnlabeledData.getNumLabels()+i).name() + " " + prediction.getConfidences()[i]);	
+    	    	}
+    	    }
+    	}
+    	return suggestedTags;
+    }
+    
     private RAkEL initializeRAkEL(boolean isSingleLineInput, boolean isBuildingModel, String text, String xmlFilename, String arffFilename) throws Exception {
 	MultiLabelInstances dataset;
 	RAkEL model;
@@ -131,13 +144,13 @@ public class MLTagger {
     }
     
     private List<MultiLabelOutput> getPredictions(RAkEL model, Instances unlabeledData) throws InvalidDataException, ModelInitializationException, Exception {
-	List<MultiLabelOutput> predictions = new ArrayList<MultiLabelOutput>();
-	int numInstances = unlabeledData.numInstances();
-	for (int instanceIndex = 0; instanceIndex < numInstances; instanceIndex++) {	     		
-	    Instance instance = unlabeledData.instance(instanceIndex);
-	    predictions.add(model.makePrediction(instance));	           
-	}
-	return predictions;
+    	List<MultiLabelOutput> predictions = new ArrayList<MultiLabelOutput>();
+    	int numInstances = unlabeledData.numInstances();
+    	for (int instanceIndex = 0; instanceIndex < numInstances; instanceIndex++) {	     		
+    		Instance instance = unlabeledData.instance(instanceIndex);
+    		predictions.add(model.makePrediction(instance));	           
+    	}
+    	return predictions;
     }
     
     // slash will probably have to be replaced by a backslash under windows 
