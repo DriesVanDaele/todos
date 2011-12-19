@@ -29,7 +29,7 @@
        your newly created controller: Todos.tagsController -->
 
   {{#collection contentBinding="Todos.tagsController" tagName="ul"}}
-    {{content.name}} ({{content.probability}})
+    {{content.name}} ({{content.prob}})
   {{/collection}}
 
   {{#view Todos.StatsView id="stats"}}

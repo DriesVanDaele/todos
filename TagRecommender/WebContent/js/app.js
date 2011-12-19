@@ -8,7 +8,7 @@ Todos.Todo = SC.Object.extend({
 
 Todos.Tag = SC.Object.extend({
   name: null,
-  probability: 0.0
+  prob: 0.0
 });
 
 Todos.todosController = SC.ArrayProxy.create({
@@ -39,35 +39,15 @@ Todos.todosController = SC.ArrayProxy.create({
 });
 
 Todos.tagsController = SC.ArrayProxy.create({
-  content: [{name: "#shop", probability: 0.5}],
+  content: [{name: "#shop", prob: 0.5}],
 
-  createTag: function(name, probability) {
-    var tag = Todos.Tag.create({ name: name, probability: probability });
+  createTag: function(name, prob) {
+    var tag = Todos.Tag.create({ name: name, prob: prob });
 	this.pushObject(tag);
   },
 
   clearAllTags: function() {
     this.forEach(this.removeObject, this);
-  },
-  
-  recommendTags: function(todo) {
-	$.get('recommend',
-	  {
-		todo: todo
-	  },
-	  function(data){
-	    Todos.tagsController.beginPropertyChanges();
-	    Todos.tagsController.clearAllTags();
-	    data.forEach(function(item){
-	      item = item.tag;
-	      var tag = Todos.Tag.create({
-	        name: item.name,
-	        probability: item.probability
-	      });
-	      Todos.tagsController.pushObject(tag);
-	    });
-	    Todos.tagsController.endPropertyChanges();
-	  });
   }
 });
 
@@ -95,7 +75,27 @@ Todos.CreateTodoView = SC.TextField.extend({
 	var value = this.get('value');
 	
 	if (value) {
-		Todos.tagsController.recommendTags(value);
+		// Attempt om hetzelfde te doen als hieronder met Sproutcore functies, maar werkt ook niet voorlopig
+//	  var request = SC.Request.getUrl("recommend").json();
+//	  var response = request.send("{todo: " + value + "}");
+//	  response.forEach(function(item){
+//	    Todos.tagsController.createTag(item.name, item.prob); 
+//	  });
+		
+	  $.get("recommend", // meer info over deze functie: http://api.jquery.com/jQuery.get/
+	    {
+		  todo: value
+	    },
+//	    Todos.tagsController.clearAllTags()  // dit werkt
+	    // probleem met generische callback function met data-parameter: werkt niet, maar voorlopig weet ik niet hoe dit komt
+	    function(data){
+	      //data = JSON.parse(data);
+	      data.forEach(function(item){
+	        Todos.tagsController.createTag(item.name, item.prob);
+	    	//Todos.tagsController.createTag(data, 0);
+	      });
+	    }
+	  );
 	}
   }
 });
