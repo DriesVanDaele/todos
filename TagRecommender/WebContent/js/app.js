@@ -6,6 +6,11 @@ Todos.Todo = SC.Object.extend({
   isDone: false
 });
 
+Todos.Tag = SC.Object.extend({
+  name: null,
+  probability: 0.0
+});
+
 Todos.todosController = SC.ArrayProxy.create({
   content: [],
 
@@ -33,6 +38,39 @@ Todos.todosController = SC.ArrayProxy.create({
   }.property('@each.isDone')
 });
 
+Todos.tagsController = SC.ArrayProxy.create({
+  content: [{name: "#shop", probability: 0.5}],
+
+  createTag: function(name, probability) {
+    var tag = Todos.Tag.create({ name: name, probability: probability });
+	this.pushObject(tag);
+  },
+
+  clearAllTags: function() {
+    this.forEach(this.removeObject, this);
+  },
+  
+  recommendTags: function(todo) {
+	$.get('recommend',
+	  {
+		todo: todo
+	  },
+	  function(data){
+	    Todos.tagsController.beginPropertyChanges();
+	    Todos.tagsController.clearAllTags();
+	    data.forEach(function(item){
+	      item = item.tag;
+	      var tag = Todos.Tag.create({
+	        name: item.name,
+	        probability: item.probability
+	      });
+	      Todos.tagsController.pushObject(tag);
+	    });
+	    Todos.tagsController.endPropertyChanges();
+	  });
+  }
+});
+
 Todos.StatsView = SC.View.extend({
   remainingBinding: 'Todos.todosController.remaining',
 
@@ -51,6 +89,14 @@ Todos.CreateTodoView = SC.TextField.extend({
       Todos.todosController.createTodo(value);
       this.set('value', '');
     }
+  },
+  
+  focusOut: function() {
+	var value = this.get('value');
+	
+	if (value) {
+		Todos.tagsController.recommendTags(value);
+	}
   }
 });
 

@@ -28,6 +28,10 @@
   <!-- SUGGESTION: Here you could put a new #collection with a binding to
        your newly created controller: Todos.tagsController -->
 
+  {{#collection contentBinding="Todos.tagsController" tagName="ul"}}
+    {{content.name}} ({{content.probability}})
+  {{/collection}}
+
   {{#view Todos.StatsView id="stats"}}
     {{#view SC.Button classBinding="isActive"
       target="Todos.todosController"

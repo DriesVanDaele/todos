@@ -33,11 +33,14 @@ public class RecommendationController extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         // Output string die teruggestuurd wordt naar de client (JSON-formaat indien Sproutcore daar makkelijk mee omgaat?)
-        String output = "";
+        StringBuilder output = new StringBuilder("[");
         
+        String todo = request.getParameter("todo");
         //
         // Allerlei stuff om onze recommendation te doen en onze output string op te bouwen...
         //
+        
+        output.append("{ tag: { name: \"" + todo + "\", probability: 0.5 }, tag: { name: \"#shop\", probability: 0.2 } } ]");
         
         out.println(output);
     }
