@@ -2,12 +2,16 @@ package com.kuleuven.recommender;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.kuleuven.tagger.MLTagger;
+import com.kuleuven.tagger.Tag;
 
 /**
  * Servlet implementation class RecommendationController
@@ -31,16 +35,27 @@ public class RecommendationController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
-        
-        // Output string die teruggestuurd wordt naar de client (JSON-formaat indien Sproutcore daar makkelijk mee omgaat?)
-        StringBuilder output = new StringBuilder();
-        
+
         String todo = request.getParameter("todo");
-        //
-        // Allerlei stuff om onze recommendation te doen en onze output string op te bouwen...
-        //
         
-        output.append("[ { \"name\": \"" + todo + "\", \"prob\": 0.5 }, { \"name\": \"#shop\", \"prob\": 0.2 } ]");
+        StringBuilder output = new StringBuilder("[");
+        
+		try {
+			List<Tag> tags = predictTodo(todo);
+			for (Tag tag : tags) {
+				if(tag.getConfidence() <= 0)
+					break;
+				output.append(tag.toJSON() + ",");
+				System.out.println(tag.toString());
+			}
+			if(output.charAt(output.length()-1) == ',')
+				output.setCharAt(output.length()-1, ' ');
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        
+        output.append("]");
         
         out.println(output);
     }
@@ -57,6 +72,17 @@ public class RecommendationController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processRequest(request, response);
+	}
+	
+	/**
+	 * Runs an instance of MLTagger using the model stored in location ./temp/modelSMO_stem2.bin 
+	 * will apply stemming upon the input text and won't let the model do any learning.
+	 * @param text : the input text for which you'd like to get some prediction
+	 * @return A list of tags. Each tag contains its tag 'name' as well as the 'confidence' associated to it.
+	 * The list that gets returned has been sorted by descending confidence.
+	 */
+	private List<Tag> predictTodo(String text) throws Exception {
+		return new MLTagger().run("modelSMO_stem.bin", true, false, text, "data/todo.xml", "data/todo_stem.arff");
 	}
 
 }

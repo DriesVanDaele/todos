@@ -39,7 +39,7 @@ Todos.todosController = SC.ArrayProxy.create({
 });
 
 Todos.tagsController = SC.ArrayProxy.create({
-  content: [{name: "#shop", prob: 0.5}],
+  content: [],
 
   createTag: function(name, prob) {
     var tag = Todos.Tag.create({ name: name, prob: prob });
@@ -47,7 +47,10 @@ Todos.tagsController = SC.ArrayProxy.create({
   },
 
   clearAllTags: function() {
-    this.forEach(this.removeObject, this);
+	var self = this;
+	this.forEach(function(tag){
+	  self.popObject();
+	});
   }
 });
 
@@ -68,10 +71,11 @@ Todos.CreateTodoView = SC.TextField.extend({
     if (value) {
       Todos.todosController.createTodo(value);
       this.set('value', '');
+      Todos.tagsController.clearAllTags();
     }
   },
   
-  focusOut: function() {
+  keyPress: function() {
 	var value = this.get('value');
 	
 	if (value) {

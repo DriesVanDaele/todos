@@ -8,3 +8,8 @@ A demo application is available at http://wannesm.github.com/todos/ .
 Derived from code by Yehuda Katz and Tom Dale.
 
 For more information about SproutCore, visit http://www.sproutcore.com.
+
+To make everything work using an application server, make sure the used model is saved at
+<glassfisch-dir>/domains/domain1/config/models/
+and the used arff-file is saved at
+<glassfish-dir>/domains/domain1/config/data/
