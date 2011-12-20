@@ -30,7 +30,6 @@ public class RecommendationController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/json");
-    	//response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         
         // Output string die teruggestuurd wordt naar de client (JSON-formaat indien Sproutcore daar makkelijk mee omgaat?)
@@ -41,8 +40,7 @@ public class RecommendationController extends HttpServlet {
         // Allerlei stuff om onze recommendation te doen en onze output string op te bouwen...
         //
         
-        output.append("[ { name: \"" + todo + "\", prob: 0.5 }, { name: \"#shop\", prob: 0.2 } ]");
-        //output.append("{ name: \"" + todo + "\", prob: 0.5 }");
+        output.append("[ { \"name\": \"" + todo + "\", \"prob\": 0.5 }, { \"name\": \"#shop\", \"prob\": 0.2 } ]");
         
         out.println(output);
     }

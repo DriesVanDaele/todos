@@ -75,25 +75,17 @@ Todos.CreateTodoView = SC.TextField.extend({
 	var value = this.get('value');
 	
 	if (value) {
-		// Attempt om hetzelfde te doen als hieronder met Sproutcore functies, maar werkt ook niet voorlopig
-//	  var request = SC.Request.getUrl("recommend").json();
-//	  var response = request.send("{todo: " + value + "}");
-//	  response.forEach(function(item){
-//	    Todos.tagsController.createTag(item.name, item.prob); 
-//	  });
-		
-	  $.get("recommend", // meer info over deze functie: http://api.jquery.com/jQuery.get/
+	  $.get("recommend",
 	    {
 		  todo: value
 	    },
-//	    Todos.tagsController.clearAllTags()  // dit werkt
-	    // probleem met generische callback function met data-parameter: werkt niet, maar voorlopig weet ik niet hoe dit komt
 	    function(data){
-	      //data = JSON.parse(data);
+	      Todos.tagsController.beginPropertyChanges();
+	      Todos.tagsController.clearAllTags();
 	      data.forEach(function(item){
-	        Todos.tagsController.createTag(item.name, item.prob);
-	    	//Todos.tagsController.createTag(data, 0);
+	    	Todos.tagsController.createTag(item.name, item.prob);  
 	      });
+	      Todos.tagsController.endPropertyChanges();
 	    }
 	  );
 	}
