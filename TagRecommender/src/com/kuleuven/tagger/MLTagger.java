@@ -1,4 +1,4 @@
-package com.kuleuven.tagger;
+package tagger;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -31,7 +31,20 @@ import java.io.ObjectOutputStream;
 // Prints suggested tags
 // Each outputline consists of a suggested tag followed by its confidence
 public class MLTagger {
-	public MLTagger() { } // Default constructor
+	
+	// This variable is only required for the web application.
+	// this way the model can be read in once and only once at the constructor. 
+	// (reading in the file time and time again serves as a bottleneck - redundant IO)
+	// then use quickRun() (instead of run()) to perform predictions, 
+	private RAkEL model;
+	
+	public MLTagger(boolean isBuildingModel, String arffFilename, String xmlFilename, String modelFilename) throws Exception { 
+		model = initializeRAkEL(isBuildingModel, xmlFilename, arffFilename, modelFilename);
+	} 
+	
+	public MLTagger() {
+		// Default constructor
+	}
 	
 	public static void main(String[] args) throws Exception {		
 		
@@ -49,21 +62,27 @@ public class MLTagger {
 		boolean isBuildingModel = Utils.getFlag("b", args); 
 		boolean isSingleLineInput = (text != ""); 
 		boolean isUsingStemming = Utils.getFlag("s", args);
-		
-		MLTagger tagger = new MLTagger();
+
+		MLTagger tagger = new MLTagger(isBuildingModel, arffFilename, xmlFilename, modelFilename);
 		List<Tag> suggestedTags = new ArrayList<Tag>();
+		
+		
 		if (isSingleLineInput) {
-			suggestedTags = tagger.run(modelFilename, isUsingStemming, isBuildingModel, text, xmlFilename, arffFilename);
+			suggestedTags = tagger.quickRun(modelFilename, isUsingStemming, isBuildingModel, text, xmlFilename, arffFilename);
 			for (Tag tag : suggestedTags) {
 				System.out.println(tag);
-	    			}	
-			} else {	
-	    		suggestedTags = tagger.run(modelFilename, unlabeledFilename, isUsingStemming, isBuildingModel, xmlFilename, arffFilename);	
-	    	}
+			}		
+		} else {	
+			suggestedTags = tagger.run(modelFilename, unlabeledFilename, isUsingStemming, isBuildingModel, xmlFilename, arffFilename);	
 	    }
-
+	}
+	public List<Tag> quickRun(String modelFilename, boolean isUsingStemming, boolean isBuildingModel, String text, String xmlFilename, String arffFilename) throws Exception {
+		Instances unlabeledData = getInstances(text, arffFilename, xmlFilename, "", true, isUsingStemming);
+    	return getSuggestedTagsWithInfo(unlabeledData, new MultiLabelInstances(arffFilename, 15), model);
+    }
+	
     public List<Tag> run(String modelFilename, String unlabeledFilename, boolean isSingleLineInput, boolean isBuildingModel, boolean isUsingStemming, String text, String xmlFilename, String arffFilename) throws Exception {
-    	RAkEL model = initializeRAkEL(isSingleLineInput, isBuildingModel, text, xmlFilename, arffFilename, modelFilename);
+    	RAkEL model = initializeRAkEL(isBuildingModel, xmlFilename, arffFilename, modelFilename);
     	Instances unlabeledData = getInstances(text, arffFilename, xmlFilename, unlabeledFilename, isSingleLineInput, isUsingStemming);
     	return getSuggestedTagsWithInfo(unlabeledData, new MultiLabelInstances(arffFilename, 15), model);
     }
@@ -138,7 +157,6 @@ public class MLTagger {
     	weka.core.Attribute [] attributes = {};
     	attributes = multiUnlabeledData.getLabelAttributes().toArray(attributes);
     	List<MultiLabelOutput> predictions = getPredictions(model, unlabeledData);
-    	System.out.println("nbofpredictions = " + predictions.size());
     	for (MultiLabelOutput prediction : predictions) { 
     	    for (int i = 0; i < prediction.getBipartition().length; i++) {
     	    	//if (prediction.getBipartition()[i]) {	
@@ -166,7 +184,7 @@ public class MLTagger {
 //        }   
 
     
-    private RAkEL initializeRAkEL(boolean isSingleLineInput, boolean isBuildingModel, String text, String xmlFilename, String arffFilename, String modelFileName) throws Exception {
+    private RAkEL initializeRAkEL(boolean isBuildingModel, String xmlFilename, String arffFilename, String modelFileName) throws Exception {
 	MultiLabelInstances dataset;
 	RAkEL model;
 	if (isBuildingModel) {
@@ -203,7 +221,7 @@ public class MLTagger {
      * @param name : the name of the output file.
      */
     private void writeRAkELToFile(RAkEL model, String name) throws Exception {
-	File f1 = new File("models/" + name);  
+	File f1 = new File("temp/" + name);  
 	String path = f1.getAbsolutePath(); 
 	
 	ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(path)));
@@ -217,7 +235,7 @@ public class MLTagger {
      * @return the RAkEL object that was stored in the file under location temp/'name'.
      */
     private RAkEL readRAkELFromFile(String name) throws Exception {
-    File f1 = new File("models/" + name);  
+    File f1 = new File("temp/" + name);  
 	String path = f1.getAbsolutePath(); 
 	
 	ObjectInputStream objectIn = new ObjectInputStream(new BufferedInputStream(new FileInputStream(path)));
