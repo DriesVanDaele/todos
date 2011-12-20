@@ -19,12 +19,15 @@ import com.kuleuven.tagger.Tag;
 @WebServlet("/recommend")
 public class RecommendationController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private MLTagger tagger;
 
     /**
      * Default constructor. 
      */
     public RecommendationController() {
         super();
+        tagger = new MLTagger("models/modelSMO_stem.bin", false, "data/todo_stem.arff", 15);
     }
     
     /**
@@ -37,16 +40,23 @@ public class RecommendationController extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String todo = request.getParameter("todo");
+        if(todo == null)
+        	return;
         
         StringBuilder output = new StringBuilder("[");
-        
+
+        todo = todo.toLowerCase();
+		todo = todo.replaceAll(" #", " TAG");
+		todo = todo.replaceAll("[\\W&&[^\\s]]", "");
+		todo = todo.replaceAll("class", "class_");
+		
 		try {
 			List<Tag> tags = predictTodo(todo);
 			for (Tag tag : tags) {
 				if(tag.getConfidence() <= 0)
 					break;
-				output.append(tag.toJSON() + ",");
-				System.out.println(tag.toString());
+				if(!todo.contains(tag.getTag()))
+					output.append(tag.toJSON() + ",");
 			}
 			if(output.charAt(output.length()-1) == ',')
 				output.setCharAt(output.length()-1, ' ');
@@ -82,7 +92,7 @@ public class RecommendationController extends HttpServlet {
 	 * The list that gets returned has been sorted by descending confidence.
 	 */
 	private List<Tag> predictTodo(String text) throws Exception {
-		return new MLTagger().run("modelSMO_stem.bin", true, false, text, "data/todo.xml", "data/todo_stem.arff");
+		return tagger.quickRun("data/todo_stem.arff", 15, true, text);
 	}
 
 }

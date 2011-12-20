@@ -1,3 +1,6 @@
+// Make sure predictive model is loaded before entering todo's
+$.get("recommend");
+
 Todos = SC.Application.create();
 
 // SUGGESTION: Your tags can be stored in a similar way as how todos are stored
@@ -92,6 +95,8 @@ Todos.CreateTodoView = SC.TextField.extend({
 	      Todos.tagsController.endPropertyChanges();
 	    }
 	  );
+	} else {
+		Todos.tagsController.clearAllTags();
 	}
   }
 });

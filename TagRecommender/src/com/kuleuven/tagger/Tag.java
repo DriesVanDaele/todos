@@ -21,7 +21,7 @@ public class Tag implements Comparable<Tag> {
 	}
 	
 	public String getTag() {
-		return tag.replaceFirst("TAG", "#");
+		return tag;
 	}
 	
 	public Double getConfidence() {
@@ -29,12 +29,12 @@ public class Tag implements Comparable<Tag> {
 	}
 	
 	public String toJSON() {
-		return "{ \"name\": \"" + getTag() + "\", \"prob\": " + getConfidence() + " }";
+		return "{ \"name\": \"" + getTag().replaceFirst("TAG", "#") + "\", \"prob\": " + getConfidence() + " }";
 	}
 	
 	@Override
 	public String toString() {
-		return getTag() + " " + getConfidence();
+		return getTag().replaceFirst("TAG", "#") + " " + getConfidence();
 	}
 	
 	@Override
