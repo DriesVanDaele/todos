@@ -1,4 +1,4 @@
-package tagger;
+package com.kuleuven.tagger;
 
 import java.io.FileReader;
 import java.io.IOException;
